@@ -1,4 +1,5 @@
 /**
+ * name : simple-factory-pattern
  * scene : company staff system
  */
 function Staff(name, age, work) {
