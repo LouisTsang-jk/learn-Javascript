@@ -1,2 +1,2 @@
 # learn-Javascript
-learn record
+## Design pattern
