@@ -5,7 +5,7 @@ const path2 = ['a', '0', 'b', 'c']; // arr path
 const path3 = ['a', '0', 'b', 'd']; // error arr path
 const path4 = 'a[0].b.c["abc"].d';  // custom path
 const result = get(object, path4);
-console.log(result);
+// console.log(result);
 function get(object, path) {
   if (object === undefined) {
     return undefined
@@ -26,15 +26,12 @@ function get(object, path) {
   }
   // path is not a path
   const paths = path.split(".");
-  const reg = /(.+?)\[(.+?)\]/g;
+  const regKeys = /(.+?)\[(.+?)\]/g;
   console.log(paths);
   paths.forEach((item) => {
-    if (reg.test(item)) {
-      let temp = reg.exec(item);
-      console.log(temp)
+    if (regKeys.test(item)) {
+      console.log(item);
+
     };
   })
-  // let keys = path.match(reg);
-  // console.log(keys);
-
 }
