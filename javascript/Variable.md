@@ -10,3 +10,4 @@ Undefined、Null、Boolean、Number和String
 JavaScript不允许直接访问内存中的位置。
 在操作对象的时候，实际上是在操作对象的引用而不是实际的对象。   
 **所以引用类型的值是按引用访问的**
+**new String得到的字符串算基本类型还是引用类型？**
