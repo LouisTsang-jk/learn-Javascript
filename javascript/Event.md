@@ -30,4 +30,8 @@ event.preventDefault()
 # 阻止冒泡捕获
 event.stopPropagation()
 
-# 事件委托
+# 事件委托(利用事件冒泡)
+在较高的DOM树上添加事件处理程序，来获取更低的性能消耗。
+
+# DOM中事件模拟
+...
