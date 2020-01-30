@@ -1,0 +1,53 @@
+# JavaScript Trick
+## 安全的类型检测
+```
+function checkType(value){
+  return Object.prototype.toString.call(value);
+}
+```
+结果:
++ [object Number]
++ [object String]
++ [object Undefined]
++ [object Null]
++ [object NaN]
++ [object Symbol]
++ [object Map]
++ [object Set]
++ [object RegExp]
++ [object Array]
++ [object Function]
+```
+function checkType(value){
+  return Object.prototype.toString.call(value).match(/(?<=object ).+(?=])/g)[0];
+}
+```
+---
+## 快速生成索引数组
+```
+function generateArray(num){
+  return Array.from(new Array(num),(item,index)=>index);
+}
+generateArray(10);
+// -> [0,1,2,3,4,5,6,7,8,9]
+```
+---
+## ???格式化数字(数字分割)
+```
+function numberSplit(num){
+  return 
+}
+```
+---
+## ???获取get请求的参数和值
+```
+...
+```
+---
+## 检验是否是正确的十六进制颜色码
+```
+function isColor(color){
+  return /^#(?:[0-9a-zA-Z]{6}|[0-9a-zA-Z]{3})$/g.test(color);
+}
+```
+---
