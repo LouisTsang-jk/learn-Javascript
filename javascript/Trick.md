@@ -51,3 +51,23 @@ function isColor(color){
 }
 ```
 ---
+## 安全作用域的构造函数
+```
+function Person(name,age,job){
+  if(this instanceof Person){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+  }else{
+    return new Person(name,age,job);
+  }
+}
+```
+---
+## 防篡改对象
+```
+let person = {name:1};
+Object.preventExtensions(person);
+obj.age = 18;
+// obj.age -> undefined
+```
