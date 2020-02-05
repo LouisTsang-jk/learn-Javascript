@@ -1,0 +1,7 @@
+# AMD
+
+# CMD
+
+# COMMON
+
+# ES6

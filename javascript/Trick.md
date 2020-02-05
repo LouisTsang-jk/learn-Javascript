@@ -71,3 +71,21 @@ Object.preventExtensions(person);
 obj.age = 18;
 // obj.age -> undefined
 ```
+---
+## 密封对象
+与preventExtensions不一样，密封的对象不可删除
+```
+let person = {name:1};
+Object.seal(person);
+obj.age = 18;
+// obj.age -> undefined
+```
+---
+## 冻结对象
+```
+let person = {name:1};
+Object.freeze(person);
+obj.age = 18;
+// obj.age -> undefined
+```
+---
