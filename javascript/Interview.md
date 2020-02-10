@@ -31,3 +31,5 @@ Array.prototype.cal=function(num){
 > + 解析HTML头部代码，下载头部中的样式资源文件(CSS)和脚本资源文件(JS)
 > + 遍历DOM树和CSSOM树，浏览器计算每个节点大小、坐标、颜色等样式，构造渲染树
 > + 根据渲染树完成绘制过程
+
+# 3. JavaScript的基础数据类型

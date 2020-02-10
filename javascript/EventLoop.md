@@ -1,28 +1,27 @@
 # JavaScript运行机制
-为了避免复杂性，JavaScript这门语言被设计成*单线程*。
-> HTML5新特性Web Worker可以创建多线程。
+为了避免复杂性，JavaScript这门语言被设计成*单线程*。  
+> HTML5新特性Web Worker可以创建多线程。  
 数据交换:
 1. postMessage
 2. onMessage
-## “任务队列”
+## 任务队列
 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
 
 ## 任务
-### 1. 同步任务sync hronous
+### 1. 同步任务(sync hronous)
 主线程上排队执行的任务，只有当一个任务执行完毕，才能执行后面一个任务。
-### 2. 异步任务async hronous
+### 2. 异步任务(async hronous)
 不进入主线程、进入“任务队列”的任务，先在event table中注册函数，当满足触发条件之后才进入“任务队列”。
 
 只有在“任务队列”通知主线程，某个异步任务可以执行，该任务才进入主线程执行
-> 具体异步任务执行机制
-1. 所有同步任务都在主线程上执行，形成执行栈(execution context stack)
-2. 主线程外，还有一个“任务队列”(task queue)。只要异步任务有运行结果，就在“任务队列”中放置一个事件
-3. 一旦“执行栈”中的所有同步任务执行完毕，系统就会读取“任务队列”，*看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。*
+#### 具体异步任务执行机制
+1. 所有同步任务都在主线程上执行，形成*执行栈(execution context stack)*
+2. 主线程外，还有一个*任务队列(task queue)*。只要异步任务有运行结果，就在*任务队列*中放置一个事件
+3. 一旦*执行栈*中的所有同步任务执行完毕，系统就会读取“任务队列”，*看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。*
 4. 主线程不断重复上面三个步骤
 
-
 ## 事件和回调函数
-![pic](https://developer.mozilla.org/files/4617/default.svg)
+![pic](https://developer.mozilla.org/files/4617/default.svg) 
 ### 栈 stack
 函数调用形成一个栈帧
 > + 基本数据类型
@@ -132,8 +131,8 @@ setTimeout(function() {
 ```
 a、g、f、h、b、d、c、e、i、k、j、l
 ---
-```
 3.
+```
 Promise.resolve().then(()=>{
 console.log('1')
 setTimeout(()=>{
@@ -150,6 +149,6 @@ Promise.resolve().then(()=>{
 ```
 1、3、4、2
 
-[参考阮一峰的JavaScript运行机制详解:再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
-[知乎.饿了么前端 Event Loop这个循环你晓得么？](https://zhuanlan.zhihu.com/p/41543963)
-[知乎.童欧巴 如何解释Event Loop面试官才满意？](https://zhuanlan.zhihu.com/p/72507900)
+[参考阮一峰的JavaScript运行机制详解:再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)  
+[知乎.饿了么前端 Event Loop这个循环你晓得么？](https://zhuanlan.zhihu.com/p/41543963)  
+[知乎.童欧巴 如何解释Event Loop面试官才满意？](https://zhuanlan.zhihu.com/p/72507900)  

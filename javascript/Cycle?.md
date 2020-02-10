@@ -33,8 +33,12 @@ for(;expression;){
 ```
 for(property in expession) statement
 ```
+*property为字符串*
 (输出循序因浏览器而异)
 > 建议在使用for-in循环之前，先检测确认该对象的值不是null或undefined
+- - -
+## for-of
+todo
 - - -
 ## label
 ```
