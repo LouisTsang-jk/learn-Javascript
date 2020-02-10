@@ -90,8 +90,66 @@ console.log('d');
 > 6. 本轮event loop全部完成
 > 7. 下一轮循环，先执行*宏任务*，发现*宏任务队列*中还有一个setTimeout，打印a
 // -> b,d,c,a
+---
+2.
+```
+console.log('a');
 
-a,
+setTimeout(function() {
+    console.log('b');
+    process.nextTick(function() {
+        console.log('c');
+    })
+    new Promise(function(resolve) {
+        console.log('d');
+        resolve();
+    }).then(function() {
+        console.log('e')
+    })
+})
+process.nextTick(function() {
+    console.log('f');
+})
+new Promise(function(resolve) {
+    console.log('g');
+    resolve();
+}).then(function() {
+    console.log('h')
+})
 
-参考阮一峰的JavaScript运行机制详解:再谈Event Loop
-https://zhuanlan.zhihu.com/p/41543963
+setTimeout(function() {
+    console.log('i');
+    process.nextTick(function() {
+        console.log('j');
+    })
+    new Promise(function(resolve) {
+        console.log('k');
+        resolve();
+    }).then(function() {
+        console.log('l')
+    })
+})
+```
+a、g、f、h、b、d、c、e、i、k、j、l
+---
+```
+3.
+Promise.resolve().then(()=>{
+console.log('1')
+setTimeout(()=>{
+  console.log('2')
+},0)
+})
+
+setTimeout(()=>{
+console.log('3')
+Promise.resolve().then(()=>{
+  console.log('4')
+})
+},0)
+```
+1、3、4、2
+
+[参考阮一峰的JavaScript运行机制详解:再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+[知乎.饿了么前端 Event Loop这个循环你晓得么？](https://zhuanlan.zhihu.com/p/41543963)
+[知乎.童欧巴 如何解释Event Loop面试官才满意？](https://zhuanlan.zhihu.com/p/72507900)
