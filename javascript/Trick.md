@@ -89,3 +89,10 @@ obj.age = 18;
 // obj.age -> undefined
 ```
 ---
+## 获取文件后缀
+```
+const str = 'apple.jpg';
+const reg = /(?<=\.).+/g;
+str.match(reg)[0]
+// -> jpg
+```
