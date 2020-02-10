@@ -78,5 +78,19 @@ console.log(Counter.value()); /* logs 2 */
 Counter.decrement();
 console.log(Counter.value()); /* logs 1 */
 ```
+此处只有一个词法环境，为三个函数所共享
++ `Counter.increment`
++ `Counter.decrement`
++ `Counter.value`
+该环境创建于一个立即执行的匿名函数体。
+该环境包含两个私有项：  
++ privateCounter 变量
++ changeBy 函数  
+在匿名函数外部无法直接访问，必须通过匿名函数返回的三个公共函数访问。
+
+# 注意
+如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。  
+而且闭包使函数中的变量都保存在内存中，造成很大的内存消耗。(内存泄露)
 # 引用
-[MDN 闭包Closure](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
+[MDN 闭包Closure](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)  
+[童欧巴 公司心来的女实习生问我什么是闭包](https://zhuanlan.zhihu.com/p/78273000)  

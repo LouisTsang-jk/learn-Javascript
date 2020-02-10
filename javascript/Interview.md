@@ -33,3 +33,4 @@ Array.prototype.cal=function(num){
 > + 根据渲染树完成绘制过程
 
 # 3. JavaScript的基础数据类型
++ 

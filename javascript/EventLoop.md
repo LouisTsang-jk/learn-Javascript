@@ -88,7 +88,7 @@ console.log('d');
 > 5. 本轮*宏任务*执行完毕，查看*微任务*，发现then方法里面的函数，打印c
 > 6. 本轮event loop全部完成
 > 7. 下一轮循环，先执行*宏任务*，发现*宏任务队列*中还有一个setTimeout，打印a
-// -> b,d,c,a
+> // -> b,d,c,a
 ---
 2.
 ```
@@ -129,7 +129,7 @@ setTimeout(function() {
     })
 })
 ```
-a、g、f、h、b、d、c、e、i、k、j、l
+> a、g、f、h、b、d、c、e、i、k、j、l
 ---
 3.
 ```
@@ -147,7 +147,7 @@ Promise.resolve().then(()=>{
 })
 },0)
 ```
-1、3、4、2
+> 1、3、4、2
 
 [参考阮一峰的JavaScript运行机制详解:再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)  
 [知乎.饿了么前端 Event Loop这个循环你晓得么？](https://zhuanlan.zhihu.com/p/41543963)  
