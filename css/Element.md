@@ -1,5 +1,21 @@
 # 可替换元素
-
+ 它们的内容不受当前文件的样式影响。CSS可以影响可替换元素的位置，但不会影响到可替换元素自身的内容。
+ + <iframe>  
+ + <video>  
+ + <embed>
+ + <img>
+还有某些特定情况下可作为可替换元素处理：
++ <option>  
++ <audio>  
++ <canvas>  
++ <object>  
++ <applet>
+某些可替换元素，其本身具有的尺寸和基线(baseline)会被一些CSS属性用到，加入计算中，如`vertical-align`
+## 控制内容框中的对象位置
++ `object-fit:`
+指定可替换元素的内容对象在元素盒区域中的填充方式(类似`background-size`)
++ `object-position:`
+指定可替换元素的内容对象在元素盒区域中的位置(类似`background-position`)
 # 行内元素/内联元素(Inline box)  
 1. 盒子不会产生换行
 2. `width`和`height`不会其作用
