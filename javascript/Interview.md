@@ -33,4 +33,14 @@ Array.prototype.cal=function(num){
 > + 根据渲染树完成绘制过程
 
 # 3. JavaScript的基础数据类型
-+ 
++ Undefined
++ Null 
++ Boolean
++ Number
++ String
++ Symbol
+
+# 4. in和hasOwnProperty
+## in 
+
+## hasOwnProperty

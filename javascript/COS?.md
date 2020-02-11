@@ -13,3 +13,15 @@
 
 # 解决跨域的方案
 1. jsonp跨域
+```
+const script = document.createElement('script');
+script.type = 'type/javascript';
+script.src = 'http://www.xxx.com/test?type=normal&callback=handlerCallback';
+document.head.appendChild(script);
+
+function handlerCallback(){
+  console.log(JSON.stringify(res));
+}
+```
+缺点：只能get
+2.
