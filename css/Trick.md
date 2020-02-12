@@ -11,3 +11,27 @@
 + 空的块级元素
 
 ## 解决方案
+
+# 去除inline-block元素间间距
+元素间留白间距出现的原因是标签端之间的空格
+1. 取消空格
+```
+<div>
+  <a href="##">hello</a
+  ><a href="##">hello</a>
+</div>
+```
+2. 使用负值margin
+具体数值根据上下文的字体和字体大小有关(不推荐)
+3. 无闭合标签
+```
+<div>
+  <a href="##">Hello
+  <a href="##">Hello</a>
+</div>
+```
+4. font-size:0
+考虑chrome默认最小字体大小限制，可能需要添加-webkit-text-size-adjust:none;
+5. letter-spacing
+6. word-spacing
+[张鑫旭](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%e5%8e%bb%e9%99%a4%e9%97%b4%e8%b7%9d/)
