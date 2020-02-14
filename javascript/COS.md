@@ -12,7 +12,10 @@
 > 3. AJAX请求不能发送
 ---
 # 解决跨域的方案
-1. jsonp跨域
+## 1. jsonp跨域
+### 原理：
+为了减轻web服务器的负载，浏览器可以通过相应的标签从不同的域名下加载静态资源。*通过动态创建标签，实现跨域*
+### 实现：
 ```
 const script = document.createElement('script');
 script.type = 'type/javascript';
@@ -23,9 +26,48 @@ function handlerCallback(){
   console.log(JSON.stringify(res));
 }
 ```
-缺点：只能实现get请求
+### 缺点：
+只能实现get请求
 --- 
-2. document.domain + iframe
+## 2. document.domain + iframe
+### 原理：
+通过JS强制设置`document.domain`为基础主域，实现同域
+### 实现：
++ 父窗口：(http://www.domain.com/a.html)
+```
+<iframe id="iframe" src="http://child.domain.com/b.html"></iframe>
+<script>
+  //document.domain => www.domain.com
+  document.domain = 'domain.com';
+  var params = 'hello';
+</scirpt>
+```
++ 子窗口：(http://child.domain.com/b.html)
+```
+<script>
+  document.domain = 'domain.com';
+  console.log(window.parent.parmas);
+</script>
+```
+### 缺点：
+限制只能主域相同，子域不同的跨域场景
+> http://www.domain.com/a.js
+> http://dev.domain.com/a.js
+> http://domain.com/a.js
+
+## 3. location.hash + iframe 
+## 4. window.name + iframe
+## 5. poastMessage
+### 原理：
+HTML5 XMLHttpRequest Level 2中的API。
+解决：
++ 页面和其打开的新窗口的数据传递
++ 多窗口之间消息传递
++ 页面与嵌套的iframe消息传递
++ 上面三个场景的跨域数据传递
+postMessage(data, origin)
++ data：支持任意基本类型和可复制的对象，避免浏览器兼容问题，尽量使用JSON.stringify()序列化  
++ origin：协议 + 主机 + 端口号，也可以设置成"*"，表示可以传递到任意窗口，如果要指定和当前窗口同源则设置"/"
 
 
 参考
