@@ -36,7 +36,14 @@ HTTP头中有Referer字段，记录请求的来源地址
 3. Token验证
 ---
 ## XMLHttpRequest
+GET
 ```
 const http = new XMLHttpRequest();
+http.open('GET','http://www.xxx.com?param1=foo&param2=bar'); // GET
 
+```
+POST
+```
+const http = new XMLHttpRequest();
+http.open('POST','')
 ```

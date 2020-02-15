@@ -44,3 +44,38 @@ Array.prototype.cal=function(num){
 ## in 
 
 ## hasOwnProperty
+
+# 5. JavaScript位置不同的影响
+## head
+初始化页面时就加载JavaScript，阻塞后续代码执行
+## body(结尾)
+页面初始化完毕才加载
+
+# 6. CSS加载
++ CSS文件是并行下载的
++ CSS文件下载不会阻塞后续JS的*下载*
++ CSS文件下载会阻塞后续JS的*执行*
+
+# 7. CSS引入方式
++ 内联
+嵌入HTML标签中
++ 页级
+Head中
++ 外联
+外部引入
+
+# 8. 变量引用
+let obj = {};
+function changeValue(obj){
+  obj.name = 'ConardLi';
+  // 这里相当于给obj重新赋予新对象的地址引用
+  obj = {name:'code秘密花园'};
+}
+changeValue(obj);
+console.log(obj.name); //-> 'ConardLi'
+
+# 9. new的过程
+1. 创建新对象
+2. 将构造函数的作用域赋给新对象
+3. 执行构造函数中的代码
+4. 返回新对象
