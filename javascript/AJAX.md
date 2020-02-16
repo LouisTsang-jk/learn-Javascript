@@ -46,4 +46,5 @@ POST
 ```
 const http = new XMLHttpRequest();
 http.open('POST','')
+http.send('')
 ```

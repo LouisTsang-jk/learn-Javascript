@@ -38,3 +38,17 @@ function Person(name){
 ```
 
 ```
+
+# 继承
+```
+function Animal(){
+	this.spcies = "animal";
+}
+function Dog(){
+	this.bark = function(){
+		console.log("barkkkkkkk");
+	}
+}
+Dog.prototype = new Animal();
+Dog.prototype.constructor = Dog;
+```

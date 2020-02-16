@@ -65,6 +65,7 @@ Head中
 外部引入
 
 # 8. 变量引用
+```
 let obj = {};
 function changeValue(obj){
   obj.name = 'ConardLi';
@@ -73,9 +74,68 @@ function changeValue(obj){
 }
 changeValue(obj);
 console.log(obj.name); //-> 'ConardLi'
+```
+
 
 # 9. new的过程
 1. 创建新对象
 2. 将构造函数的作用域赋给新对象
 3. 执行构造函数中的代码
 4. 返回新对象
+demo
+```
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.hello = function(){
+    return `My name is ${this.name}`;
+} 
+const tom = new Person('tom',22);
+```
+process
+```
+function $new(){
+    var obj = {}; //stage 1
+    obj.__proto__ = Person.prototype; //stage 2
+    obj.name = 'tom'; //stage 3
+    obj.age = 22;//stage 3
+    obj.hello = function(){ //stage 3
+        return 'tom';
+    }
+    return obj;
+}
+```
+polyfill
+```
+function $new(){
+
+}
+```
+
+# 10. MVC和MVVM
+## MVC
+业务逻辑、数据、界面分离的设计模式
++ Model 模型
+功能的实现、数据库管理，主要负责数据存储
++ View 视图
+用户所能看到的界面，主要负责数据展示
++ Controller 控制器
+对请求进行处理，连接Model和View
+
+## MVVM
+是一种双向绑定的响应式设计模式
++ Model 数据层
++ View 视图层
++ ViewModel 数据视图层
+
+# 优化首屏幕
+1. Vue-router异步路由
+2. 不打包库文件,外部引入，防止阻塞
+3. gzip
+
+# 减少白屏时间
+1. Vue-router异步路由
+2. webpack打包优化
+3. 骨架屏
+4. 模版预加载
