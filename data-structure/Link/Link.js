@@ -25,7 +25,10 @@ function printListFromTailToHead(head){
   }
   return result;
 }
-const linkList = linkGenerator(1,2,3,4,5);
-const result = printListFromTailToHead(linkList);
+// const linkList = linkGenerator(1,2,3,4,5);
+// const result = printListFromTailToHead(linkList);
 
-// 
+// 反转单向链表
+function reverseLinkList(head){
+  let temp;
+}
