@@ -30,5 +30,20 @@ function printListFromTailToHead(head){
 
 // 反转单向链表
 function reverseLinkList(head){
-  let temp;
+  let temp = head;
+  while(temp){
+    head.next = temp;
+    temp = head.next;
+    head = head.next;
+  }
+}
+
+// 链表
+function Link(){
+  let list = [...arguments];
+  let result = new LinkNode(list.shift());
+  while(list.length){
+      result.next = new LinkNode(list.shift());
+  }
+  return result;
 }
