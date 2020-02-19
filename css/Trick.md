@@ -35,3 +35,6 @@
 5. letter-spacing
 6. word-spacing
 [张鑫旭](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%e5%8e%bb%e9%99%a4%e9%97%b4%e8%b7%9d/)
+
+# 禁止input调用原生软键盘
+添加readonly
