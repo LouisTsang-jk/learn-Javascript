@@ -1,7 +1,8 @@
-# AMD
+# Module
+## AMD
 
-# CMD
+## CMD
 
-# COMMON
+## COMMON
 
-# ES6
+## ES6
