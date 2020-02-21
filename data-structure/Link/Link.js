@@ -17,13 +17,18 @@ function Link(){
 }
 
 // 反转单向链表
-function reverseLinkList(head){
-  let prev = null,current,next = head;
+function reverseLink(head){
+  let prev = null,
+      current = head,
+      next = head;
   while(next){
+    next = next.next;
+    current.next = prev;
+    prev = current;
     current = next;
-    // next.next = 
   }
-  return prev
+  return prev;
 }
-const result = reverseLinkList(new Link(1,2,3,4,5));
-console.log(result);
+// const result = reverseLink(new Link(1,2,3,4,5));
+// console.log(result);
+
