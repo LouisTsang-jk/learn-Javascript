@@ -8,7 +8,7 @@ const config = {
 
 exports.default = function () {
   return src('file.js')
-    .pipe(replace(/import (?!Vue|Router)(.+) from '(.+)'/g,`const $1 = ()=> import('$2')`))
+    .pipe(replace(/import (?!Vue|Router)(.+) from '(.+)'/g,`const $1 = ()=> import('$2');`))
     .pipe(rename({ extname: '.lazy.js' }))
     .pipe(dest('lazy/'));
 }
