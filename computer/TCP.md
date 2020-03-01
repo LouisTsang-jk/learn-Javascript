@@ -37,6 +37,6 @@ TCP用*三次握手(three-way handshake)*过程创建一个连接。连接创建
 # 浏览器中输入URL之后执行的过程
 访问www.domain.com
 1. 客户端浏览器通过DNS解析到`www.domian.com`的IP地址xxx.xxx.xxx.xxx，通过IP地址找到客户端到服务器的路径。客户浏览器发起一个HTTP会话到xxx.xxx.xxx.xxx，然后通过TCP协议封装数据包，输入到网络层。
-2. 
-3. 
-4. 
+2. 在客户端的*传输层*添加TCP头，将HTTP会话请求分成报文段，添加源和目的端口。如服务器使用80端口
+3. 客户端的*网络层*(添加IP头)
+4. 客户端的*链路层*(添加MAC头)
