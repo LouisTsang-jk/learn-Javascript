@@ -26,11 +26,15 @@ const reg3 = /(?<=\()[^\(\)]+(?=\))/g // 完美
 在面对后面的字符不想包括在匹配中的话可以使用断言?=
 断言并不会将加入匹配内
 
+TODO：DEMO
 ## (?:pattern)
 非获取匹配，匹配`pattern`，但是*不获取匹配结果*
 ## (?=pattern)
 非获取匹配，正向肯定预查
-
+## (?!pattern)
+非获取匹配，正向否定预查
+## (?<=pattern)
+## (?<!pattern)
 
 # 参考
 [](https://www.cnblogs.com/allen2333/p/9835654.html)
