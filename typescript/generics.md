@@ -65,3 +65,14 @@ function sum() {
   let args: IArguments = arguments;
 }
 ```
+
+## 函数表达式
+```
+let mySum: (x: number, y: number) => number = function (x: number, y: number): number {
+  return x + y;
+};
+// 用接口定义
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+```
