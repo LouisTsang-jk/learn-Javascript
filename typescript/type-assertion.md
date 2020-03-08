@@ -9,3 +9,14 @@
 ```
 值 as 类型
 ```
+## demo
+使用类型断言，将`something`断言成`string`
+```
+function getLength(something: string | number): number {
+  if ((<string>something).length) {
+    return (<string>something).length;
+  } else {
+    return (<number>something).toString().length;
+  }
+}
+```
