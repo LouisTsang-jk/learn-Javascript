@@ -19,3 +19,49 @@ function swap<T, U>(tuple:[T, U]: [U, T]) {
 }
 swap([7,'seven']); // ['seven',7]
 ```
+## 泛型约束
+```
+interface Lengthwise {
+  length: number;
+}
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+```
+这里用`extends`约束了泛型`T`必须符合接口`Lengthwise`的形状，也就是必须包含`length`属性。
+
+## 泛型接口
+用接口定义一个函数需要符合的形状
+```
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+let mySeatch: SearchFunc;
+mySearch = function(source: string, subString: string) {
+  return source.search(subString) !== -1; 
+}
+```
+含有泛型的接口
+```
+interface CreateArrayFunc {
+  <T>(length: number, value: T): Array<T>;
+}
+let createArray: CreateArrayFunc;
+createArray = function<T>(length: number, value: T):Array<T> {
+  let result: T[] = [];
+  for(let i = 0; i < length; i++) {
+    result[i] = value;
+  }
+  return result;
+}
+createArray(3,'x'); // ['x','x','x']
+```
+
+## 类数组
+类数组都有自己的接口定义，如`IArguments`,`NodeList`,`HTMLCollection`
+```
+function sum() {
+  let args: IArguments = arguments;
+}
+```
