@@ -75,4 +75,10 @@ let mySum: (x: number, y: number) => number = function (x: number, y: number): n
 interface SearchFunc {
   (source: string, subString: string): boolean;
 }
+let mySearch: SearchFunc;
+mySearch = function(source: string, subString: string) {
+  return source.search(subString) !== -1;
+}
 ```
+此外要注意，可选参数后面不允许出现必需参数。  
+添加了默认值的参数会被识别为可选参数。

@@ -1,9 +1,9 @@
-function createArray(length: number, value: any): Array<any> {
-  let result = [];
-  for (let i: number = 0; i < length; i++) {
-    result[i] = value;
+function reverse(x: number): number;
+function reverse(x: string): string;
+function reverse(x: number | string): number | string {
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''));
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('');
   }
-  return result;
 }
-const r1 = createArray(5, 0);
-console.log(r1);

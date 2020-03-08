@@ -1,9 +1,8 @@
-function createArray(length, value) {
-    var result = [];
-    for (var i = 0; i < length; i++) {
-        result[i] = value;
+function reverse(x) {
+    if (typeof x === 'number') {
+        return Number(x.toString().split('').reverse().join(''));
     }
-    return result;
+    else if (typeof x === 'string') {
+        return x.split('').reverse().join('');
+    }
 }
-var r1 = createArray(5, 0);
-console.log(r1);
