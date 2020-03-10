@@ -23,3 +23,14 @@ var Days;
 ## 枚举项
 ### 常数项(constant member)
 ### 计算所得项(computed member)
+```
+enum Color {Red, Green, Blue = 'blue'.length}; // Right
+enum Color {Red = 'red'.length, Green, Blue}; // Error
+```
+如果紧接在计算所得项后面的是未手动赋值的项，那么它就会因为无法获得初始值而报错
+
+## 常数枚举
+```
+enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
+```
+## 外部枚举
