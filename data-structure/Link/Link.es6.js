@@ -6,5 +6,5 @@ class LinkNode {
 }
 
 class Link {
-
+  
 }
