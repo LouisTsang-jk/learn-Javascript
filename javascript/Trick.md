@@ -96,3 +96,13 @@ const reg = /(?<=\.).+/g;
 str.match(reg)[0]
 // -> jpg
 ```
+
+## 伪数组对象的遍历
+```
+let fakeArray = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3
+}
+```
