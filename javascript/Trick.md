@@ -105,4 +105,5 @@ let fakeArray = {
   2: 'c',
   length: 3
 }
+Array.prototype.slice.call(fakeArray);
 ```
