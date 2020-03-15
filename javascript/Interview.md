@@ -143,3 +143,5 @@ function $new(){
 # Tree-shaking原理
 利用ES6模块的静态引入，编译时可以知道实际加载情况，分析变量是否被使用或引用，从而删除代码。
 为了达到更高的效果，减少代码的副作用。
+
+# docContentLoad和onLoad区别

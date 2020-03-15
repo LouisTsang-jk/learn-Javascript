@@ -4,11 +4,11 @@ function TreeNode(key) {
   this.right = null;
 }
 
-// DLR(前序遍历)、
-// LDR(中序遍历)、
+// DLR(前序遍历)、 [3,9,20,15,7]
+// LDR(中序遍历)、 [9,3,15,20,7] 
 // LRD(后序遍历)
-
-function Tree({ DLR, LDR, LRD }) {
+// Binary Search Tree
+function BinarySearchTree({ DLR, LDR, LRD }) {
   // 必须有中序
   if (!LDR) {
     throw Error('LDR must exist');
