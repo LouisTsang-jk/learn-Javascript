@@ -145,3 +145,33 @@ function $new(){
 为了达到更高的效果，减少代码的副作用。
 
 # docContentLoad和onLoad区别
+
+
+# TODO
+```
+(function() {
+    console.log(age);
+    console.log(name);
+    let name = 'PapaerCrane';
+    var age = 24;
+})();
+```
+
+# TODO
+```
+const myPromise = () =>
+  Promise.resolve('I have resolved')
+
+const firstFunc = () => {
+    myPromise().then((res) => {
+      console.log(res + ' first');
+    });
+    console.log('first');
+}
+async function secondFunc() {
+    console.log(await myPromise());
+    console.log('second');
+}
+firstFunc();
+secondFunc();
+```
