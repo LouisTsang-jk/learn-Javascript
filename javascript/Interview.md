@@ -175,3 +175,22 @@ async function secondFunc() {
 firstFunc();
 secondFunc();
 ```
+
+# 在一个字符串中找到第一个只出现一次的字符。如输入abaccdefbf，则输出d，找不到则输出false
+```
+let str = "abaccdefbf";
+function firstOne(str){
+    let arr = str.split('');
+    let repeatPool = [];
+    while(arr.length){
+        const tempReg = new RegExp(`/${arr[0]}/g`);
+        if([...arr.join('').matchAll(tempReg)].length === 1){
+            return i;
+        }else{
+            repeatPool.push(arr[0])
+        }
+        arr.shift();
+    }
+    return -1;
+}
+```

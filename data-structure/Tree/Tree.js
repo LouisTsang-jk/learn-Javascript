@@ -17,5 +17,5 @@ function BinarySearchTree({ DLR, LDR, LRD }) {
   if (DLR || LRD) {
     throw Error('DLR and LRD must have one');
   }
-
+  
 }
