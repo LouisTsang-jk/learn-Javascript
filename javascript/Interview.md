@@ -183,14 +183,21 @@ function firstOne(str){
     let arr = str.split('');
     let repeatPool = [];
     while(arr.length){
-        const tempReg = new RegExp(`/${arr[0]}/g`);
-        if([...arr.join('').matchAll(tempReg)].length === 1){
-            return i;
-        }else{
-            repeatPool.push(arr[0])
+        const tempReg = new RegExp(arr[0],'g');
+        const tempValue = arr.shift();
+        if(repeatPool.includes(tempValue)){
+            continue;
         }
-        arr.shift();
+      	console.log("Traverse");
+      	const temp = [...str.matchAll(tempReg)];
+        if([...str.matchAll(tempReg)].length === 1){
+          	console.log(temp);
+            return tempValue;
+        }else{
+            repeatPool.push(tempValue)
+        }
     }
     return -1;
 }
+console.log(firstOne(str));
 ```
