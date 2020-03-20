@@ -107,3 +107,4 @@ let fakeArray = {
 }
 Array.prototype.slice.call(fakeArray);
 ```
+

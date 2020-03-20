@@ -201,3 +201,8 @@ function firstOne(str){
 }
 console.log(firstOne(str));
 ```
+
+
+# 如何实现图片懒加载
+给img标签先链接到一个空白的图片，添加自定义属性`data-src`存放真正图片的src，js监听到该图片进入可视范围的时候，再将`data-src`的值赋予`src`
+
