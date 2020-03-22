@@ -23,3 +23,13 @@ interface Alarm {
   weight: number;
 }
 ```
+等价于 =>
+```
+interface Alarm {
+  price: number;
+  weight: number;
+}
+```
+*合并的属性的类型必须是唯一的*
+## 类的合并
+类的合并与接口的合并规则一致
