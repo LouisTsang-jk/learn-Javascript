@@ -8,11 +8,20 @@ git是版本控制系统
 同时目录下会多一个隐藏文件夹`.git`，这是git用来跟踪管理版本库的。  
 *注意git不能跟踪二进制文件的改动，如doc*
 
+
+### 创建分支
+`git branch <branchname>`
+`git branch -b <branchname>` 创建并切换到该分支
+
 ### 把文件添加到仓库
 `git add (filename)`
 
-
-
-
+### 
+TODO
+git merge
+git checkout
+git checkout .
+git status
+git fetch
 
 [廖雪峰git教程](liaoxuefeng.com/wiki/896043488029600/896067008724000)
