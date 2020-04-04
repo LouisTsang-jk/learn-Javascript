@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <C1 text="This is compontents 1"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import C1 from './components/C1.vue'
 
 export default {
   name: 'App',
+  custom: 'custom',
   components: {
-    HelloWorld
+    C1
+  },
+  created(){
+    // console.log(this.$options)
   }
 }
 </script>
