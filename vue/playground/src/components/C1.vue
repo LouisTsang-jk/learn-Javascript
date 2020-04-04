@@ -1,7 +1,11 @@
 <template>
   <div class="hello" @click="$emit('play')">
     <h1>{{ text }}</h1>
-    <C1C></C1C>
+    <C1C>
+      <template v-slot:header>header</template>
+      <template v-slot:main>main</template>
+      <template v-slot:footer="text1">footer+{{text1.params1}}</template>
+    </C1C>
   </div>
 </template>
 
@@ -13,6 +17,13 @@ export default {
   components: {
     C1C
   },
+  data(){
+    return {
+      text1:{
+        params1: "仅仅是文字"
+      }
+    }
+  },
   props: {
     text: {
       type: String,
@@ -20,14 +31,16 @@ export default {
     }
   },
   created() {
-    console.log("data", this.$data);
-    console.log("props", this.$props);
-    console.log("options", this.$options.customOptions);
-    console.log("parent", this.$parent);
-    console.log("root", this.$root);
+    // console.log("data", this.$data);
+    // console.log("props", this.$props);
+    // console.log("options", this.$options.customOptions);
+    // console.log("parent", this.$parent);
+    // console.log("root", this.$root);
   },
   mounted() {
-    console.log("el", this.$el);
+    // console.log("el", this.$el);
+    console.log("children", this.$children);
+
   }
 };
 </script>
