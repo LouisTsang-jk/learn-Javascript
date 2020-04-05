@@ -19,7 +19,9 @@ export default {
     text: Object
   },
   created() {
-    console.log("slot", this.$slots);
+    console.log("slot", this.$slots)
+    console.log("attrs", this.$attrs)
+    console.log("listeners", this.$listeners)
   },
   mounted() {
 

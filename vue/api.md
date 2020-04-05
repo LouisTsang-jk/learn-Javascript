@@ -16,12 +16,14 @@ Vue实例观察的数据对象，Vue会递归将data的属性转换为`getter/se
 
 ## $slots
 访问当前Vue实例的插槽内容
-## $scopedSlots
+## ? $scopedSlots
 访问作用域插槽
 ## $refs
-
+获取注册过`ref`的所有DOM元素和组件实例
 ## $isServer
-
+判断当前`Vue`实例是否运行于服务器
 ## $attrs
-
+包含了父作用域中*不作为`prop`识别*(`style`和`class`除外)。  
+*可以通过`v-bind="$attrs"`传入组件内部*
 ## $listeners
+包含了父作用域中(不含`.native`修饰起的)`v-on`事件监听器。
