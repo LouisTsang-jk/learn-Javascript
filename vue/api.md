@@ -24,6 +24,8 @@ Vue实例观察的数据对象，Vue会递归将data的属性转换为`getter/se
 判断当前`Vue`实例是否运行于服务器
 ## $attrs
 包含了父作用域中*不作为`prop`识别*(`style`和`class`除外)。  
-*可以通过`v-bind="$attrs"`传入组件内部*
+*可以通过`v-bind="$attrs"`传入组件内部*  
+`inheritAttrs:false`会把`attrs`禁止掉，但是并不会影响`$attrs`输出，只是让dom节点上面不显示
 ## $listeners
-包含了父作用域中(不含`.native`修饰起的)`v-on`事件监听器。
+包含了父作用域中(不含`.native`修饰起的)`v-on`事件监听器。  
+*v-on="$listeners"*

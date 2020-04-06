@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @contextmenu.prevent="rightClick">
     <C1 text="This is compontents 1"/>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   },
   created(){
     // console.log(this.$options)
+  },
+  methods:{
+    rightClick(){
+      console.log('右键点击事件')
+    }
   }
 }
 </script>

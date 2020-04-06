@@ -18,6 +18,7 @@ export default {
   props: {
     text: Object
   },
+  inheritAttrs:true,
   created() {
     console.log("slot", this.$slots)
     console.log("attrs", this.$attrs)
