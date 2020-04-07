@@ -25,11 +25,30 @@ git status
 git fetch
 
 ### 一些会遇到的情景
-#### 提交错代码，需要返回某个commit上
-
-#### 发现commit错分支
+#### 修改的文件已经添加到暂存区，想撤销
+```
+git reset --mixed HEAD
+```
+#### 撤销commit
+```
+git reset --soft HEAD^
+```
+#### 撤销已提交到远程主机的文件
+```
+git revert <commit_id>||HEAD
+```
+#### 开发功能到半路，需要切换分支去修复紧急bug
+```
+// save
+git stash
+// load
+git stash pop
+```
+#### 跨分支单独提交(important)
+```
+git cherry-pick <commit_id>
+```
 #### 需要将两个分支合并
 #### 新功能新建分支
-#### 开发功能到一般，需要切换分支去修复紧急bug
 
 [廖雪峰git教程](liaoxuefeng.com/wiki/896043488029600/896067008724000)
