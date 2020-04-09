@@ -22,8 +22,8 @@
 + `margin` 
 + `padding` 
 ## 应用场景
-当正常换行的时候，我们会遇到单词被打断的情况，这时候第一行的结果是没有`padding-right`右边距的，同时换行之后也是没有`padding-left`左边距的，在某些场景的时候，如这个单词有特殊样式的时候会显得十分丑，
-那么这个时候就可以用这个属性处理。
+1. 当正常换行的时候，我们会遇到单词被打断的情况，这时候第一行的结果是没有`padding-right`右边距的，同时换行之后也是没有`padding-left`左边距的，在某些场景的时候，如这个单词有特殊样式的时候会显得十分丑，那么这个时候就可以用这个属性处理。
+2. 多行渐变，详情参见参考3(张鑫旭博客)
 ## 用法
 ```
 box-decoration-break: clone;
@@ -37,3 +37,4 @@ box-shadow: 8px 8px 10px 0 red, -5px -5px 5px 0 green, 5px 5px 15px 0 yellow;
 # 参考
 [multi-line-padded-text](https://css-tricks.com/multi-line-padded-text/)
 [MDN|box-decoration-break](https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break)
+[CSS/CSS3 box-decoration-break属性简介](https://www.zhangxinxu.com/wordpress/2019/01/css-css3-box-decoration-break/)
