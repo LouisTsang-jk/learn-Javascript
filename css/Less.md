@@ -87,7 +87,17 @@ Less内置函数，一般用于转换颜色、字符串处理、算术运算。
 }
 ```
 ## 映射(Maps)
-
+将`混合(mixins)`和`规则集(rulesets)`作为映射(map)使用
+```
+#colors() {
+  primary: blue;
+  secondary: green;
+}
+.button {
+  color: #colors[primary];
+  border:1px solid #colors[secondary];
+}
+```
 ## 作用域(Scope)
 
 ## 注释(Comments)
