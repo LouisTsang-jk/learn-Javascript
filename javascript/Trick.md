@@ -108,3 +108,8 @@ let fakeArray = {
 Array.prototype.slice.call(fakeArray);
 ```
 
+## 
+```
+const arr = new Array(5).fill([]);
+arr[0] == arr[1] // => true
+```
