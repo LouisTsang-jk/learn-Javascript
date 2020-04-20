@@ -38,3 +38,6 @@ new Promise((resolve, reject) => {
   console.log('run here C'); // ignore above answer
 })
 ```
+## Promise.all()
+
+## Promise.race()
