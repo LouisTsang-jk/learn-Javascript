@@ -63,3 +63,38 @@ input:valid {
 
 ### Placeholder pseudo-class
 + `:placeholder-shown`
+
+### Indeterminate-value pseudo-class
++ `:indeterminate`
+
+### Validity pseudo-class
++ `:valid`
++ `:invalid`
+
+### User-interaction pseudo-class
++ `:user-invalid`
+
+### Relational pseudo-class
++ `:has`
+
+### Scope pseudo-class
++ `:scope`
+
+### Range pseudo-class
++ `:in-range`
++ `:out-of-range`
+
+### Grid-Structural pseudo-class
++ `:nth-col(n)`
++ `:nth-last-col(n)`
+
+### Time-dimensional pseudo-class
++ `:current`
++ `:past`
++ `:future`
+
+### Default option pseudo-class
++ `:default`
+
+### Focus container pseudo-class
++ `:focus-within`
