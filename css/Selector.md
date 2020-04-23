@@ -98,3 +98,12 @@ input:valid {
 
 ### Focus container pseudo-class
 + `:focus-within`
+
+### Focus indicated pseudo-class
++ `:focus-visible`
+
+### Target container pseudo-class
++ `:target-within`
+
+### Column combination
++ `E || F`
