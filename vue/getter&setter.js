@@ -22,7 +22,11 @@ window.Dep = class Dep {
   depend () {
     if (activeUpdate) {
       // register the current active update
+      this.subscribers.add(activeUpdate)
     } 
+  }
+  notify () {
+    this.subscribers.forEach(sub => sub())
   }
 }
 
