@@ -32,8 +32,18 @@ obj1 === obj3
 // => true
 ```
 + .create()
+创建一个新对象，使用现有的对象来提供新创建的对象的`__proto__`，实现类式继承
+```
+const person1 = {
+  father: 'louis tsang'
+}
+const person2 = Object.create(person1)
+person2.father // => louis tsang
+```
 + .defineProperties()
+直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
 + .defineProperty()
+直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
 + .entries()
 + .freeze()
 + .fromEntries()
