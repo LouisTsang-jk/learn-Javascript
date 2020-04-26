@@ -45,6 +45,7 @@ person2.father // => louis tsang
 + .defineProperty()
 直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
 + .entries()
+返回一个给定对象自身可枚举属性的键值对数组，其排列与使用`for...in`循环遍历对象的顺序一致*(`for...in`)会枚举原型链中的属性*
 + .freeze()
 + .fromEntries()
 + .getOwnPropertyDescriptor()
