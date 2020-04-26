@@ -12,13 +12,13 @@
 function clone (obj) {
   return Object.assign({}, obj)
 }
+```
 `浅克隆(克隆继承值)`
 ```
 function clone (obj) {
   const objProto = Object.getPrototypeOf(obj);
   return Object.assign(Object.create(objProto), obj);
 }
-```
 ```
 `合并对象`    
 ```
@@ -47,7 +47,17 @@ person2.father // => louis tsang
 + .entries()
 返回一个给定对象自身可枚举属性的键值对数组，其排列与使用`for...in`循环遍历对象的顺序一致*(`for...in`)会枚举原型链中的属性*
 + .freeze()
+冻结一个对象，该对象再也无法修改，无法添加新属性和删除已有属性及修改该对象已有属性的可枚举性、可配置型、可写性甚至`原型`也无法修改。*注意这个方法不会显式报错*
 + .fromEntries()
+把键值对列表转换为一个对象。是`entries`的反转
+```
+const entries = new Map([
+  ['foo', 'bar'],
+  ['baz', 42]
+])
+const obj = Object.fromEntries(entries);
+// => {foo: "bar", baz: 42}
+```
 + .getOwnPropertyDescriptor()
 + .getOwnPropertyDescriptors()
 + .getOwnPropertyNames()
