@@ -64,8 +64,26 @@ const obj = Object.fromEntries(entries);
 + .getOwnProertySymbols()
 + .getPrototypeOf()
 + .is()
+判断两个值是否相同。
++ 两个值都是`undefined`
++ 两个值都是`null`
++ 两个值都是相同的布尔值
++ 两个值都是相同个数的字符按照相同的顺序组成的字符串
++ 两个值指向同个对象
++ 两个值同为`+0`、`-0`、`NaN`、其余相同数字
+*与`===``判定方式不一样，在`===`中正负零相等*，还有`Number.NaN`和`NaN`不相等
 + .isExtensible()
+判断是一个对象是否可扩展。(即往上面添加新属性)
+不可扩展性可以通过：
++ `Object.preventExtensions`
++ `Object.seal`
++ `Object.freeze`  
 + .isFrozen()
+判断对象是否被冻结。
+冻结是指：
++ 不可扩展
++ 属性不可配置
++ 数据属性不可写(getter或setter的访问器属性不可写)
 + .isSealed()
 + .keys()
 + .preventExtensions()
