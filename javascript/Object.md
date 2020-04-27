@@ -86,8 +86,25 @@ const obj = Object.fromEntries(entries);
 + 数据属性不可写(getter或setter的访问器属性不可写)
 + .isSealed()
 + .keys()
+返回一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用`for...in`循环遍历该对象时返回的顺序一致。
+*返回一个所有元素为`字符串`的数组*。   
+如果想获取一个对象的所有属性，甚至包括不可枚举的，可以使用`Object.getOwnPropertyNames`
 + .preventExtensions()
+让一个对象变的不可扩展，即永远不能再添加新的属性。该方法会使得目标对象的[[prototype]]不可变；任何重新赋值[[prototype]]操作都会抛出`TypeError`。
+```
+var fixed = Object.preventExtensions({});
+fixed.__proto__ = { hello: 'world' };
+// Throw Error
+fixed.str = 'This is String';
+// -> fixed => {}
+```
 + .hasOwnProperty()
+返回布尔值，判断对象自身属性中是否具有指定的属性，*该方法会忽略掉原型链上继承到的属性。*
+```
+let obj = Object.assign(Object.create({length:2}),{a:1,b:2});
+obj.hasOwnProperty('length'); // false
+'length' in obj; // true
+```
 + .isPrototypeOf()
 + .propertyIsEnumerable()
 + .toLocaleString()
