@@ -49,6 +49,25 @@ git stash pop
 git cherry-pick <commit_id>
 ```
 #### 需要将两个分支合并
+```
+// 
+git merge <branch_name> 
+```
 #### 新功能新建分支
+```
+git checkout -b <branch_name>
+```
+#### commit错分支
+```
+git add .
+git commit -m "..."
+// 发现所在分支不是想commit的分支
+git checkout <branch_name>
+git cherry-pick <commit_id>
+git push
+// 记得在commit错的分支上撤回commit
+git checkout <error_branch_name>
+git reset --hard <commit_id>
+```
 
 [廖雪峰git教程](liaoxuefeng.com/wiki/896043488029600/896067008724000)
