@@ -19,3 +19,21 @@
 对抽象语法树进行转换处理操作
 - 「生成代码(Code Generation)」:
 将转换之后的AST对象生成目标语言代码字符串
+## 实现小型编译器
+1. 输入「原始代码」
+```
+// origin code 
+(add 2 (subtract 42))
+```
+
+```
+function compiler (input) {
+  let tokens = tokenizer(input);
+  let ast = parser(tokens);
+  let newAst = transformer(ast);
+  let output = codeGenerator(newAst);
+  return output;
+}
+```
+2. 「解析阶段(Parsing)」
+原始代码字符串通过「词法分析器(Tokenizer)」转换为词法单元数组，然后通过「语法分析器(Parser)」将「词法单元数组」转换为「抽象语法树(AST)」
