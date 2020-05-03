@@ -15,5 +15,11 @@
 - 子元素只会计算横向样式空间(padding + border + margin)，垂直方向样式空间不会被计算
 - 垂直方向上，子元素会以不同形式来对其(vertical-align)
 
+# FFC(Flex formatting contexts)
+弹性盒模型
+## 触发条件
+父级元素设置成`display:flex`或者`display:inline-flex`
+
+
 # 参考
 [](https://juejin.im/post/5ea45801e51d4546d4399055?utm_source=gold_browser_extension#heading-15)
