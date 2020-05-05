@@ -63,6 +63,13 @@ const obj = Object.fromEntries(entries);
 + .getOwnPropertyNames()
 + .getOwnProertySymbols()
 + .getPrototypeOf()
+返回其原型的对象。
+```
+const prototype1 = {};
+const obj1 = Object.create(prototype1);
+console.log(Object.getPrototypeOf(obj1) === prototype1);
+// => true
+```
 + .is()
 判断两个值是否相同。
 + 两个值都是`undefined`
@@ -110,6 +117,7 @@ obj.hasOwnProperty('length'); // false
 + .toLocaleString()
 + .toString()
 + .valueOf()
+返回值为该对象的原始值
 + .seal()
 + .setPrototypeOf()
 + .values()
