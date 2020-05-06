@@ -61,6 +61,12 @@ const obj = Object.fromEntries(entries);
 + .getOwnPropertyDescriptor()
 + .getOwnPropertyDescriptors()
 + .getOwnPropertyNames()
+返回一个由指定对象的所有自身属性的属性名(包括不可枚举属性但不包括Symbol值作为名称的属性)组成的`数组`。
+```
+var arr = ['a', 'b', 'c'];
+console.log(Objcet.getOwnPropertyNames(arr).sort());
+// => ['0', '1', '2' ,'lenght']
+```
 + .getOwnProertySymbols()
 + .getPrototypeOf()
 返回其原型的对象。
