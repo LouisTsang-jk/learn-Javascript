@@ -18,6 +18,9 @@ Longest Common Subsequence problem
 输出：3
 解释：最长公共子序列是 "abc"，它的长度为 3。
 ```
-
+## 思路
+一般动态规划题两个特征
+- 最优子结构
+- 重叠子问题
 
 [leetcode 1143](https://leetcode-cn.com/problems/longest-common-subsequence/)
