@@ -9,6 +9,8 @@
 1. 当JavaScript运行时错误(包括语法错误)，window会触发一个`ErrorEvent`接口的`error`时间，并执行`window.onerror()`。
 2. 当一项资源(<img>或<script>)加载失败，加载资源的元素会触发一个`Event`接口，并执行该元素上的`onerror()`处理函数。这些error事件不会向上冒泡到window。(*加载一个全局的error事件处理函数可用于自动收集错误报告*)。
 - `onfocus`
+当元素获取键盘焦点时会触发`focus`事件。
 - `oncancel`
+当用户需要离开`<dialog>`元素的时候就会触发`cancel`事件，这个事件处理器会防止事件向上传递。
 - `oncanplay`
 - `oncanplaythrough`
