@@ -19,3 +19,8 @@
 - `includes`
 
 - `join`
+
+- `slice`
+
+- `toString`
+由所有数组元素组合而成的字符串。遮蔽原型链上的`toString`方法
