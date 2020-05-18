@@ -39,6 +39,19 @@ for(property in expession) statement
 - - -
 ## for-of
 todo
+### 
+- 使用
+```
+const obj = {
+  a: '5',
+  b: '8'
+}
+for (let [key, value] of Object.entries(obj)) {
+  console.log(`${key}:${value}`)
+}
+// a: 5
+// b: 8
+```
 - - -
 ## label
 ```

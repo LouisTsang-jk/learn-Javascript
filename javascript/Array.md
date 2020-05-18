@@ -24,3 +24,17 @@
 
 - `toString`
 由所有数组元素组合而成的字符串。遮蔽原型链上的`toString`方法
+
+## 
+- 使用`for...of`
+```
+const obj = {
+  a: '5',
+  b: '8'
+}
+for (let [key, value] of Object.entries(obj)) {
+  console.log(`${key}:${value}`)
+}
+// a: 5
+// b: 8
+```
