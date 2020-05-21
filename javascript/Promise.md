@@ -44,3 +44,13 @@ new Promise((resolve, reject) => {
 ### 参数 「iterable」
 一个可迭代对象，如`Array`或`String`
 ## Promise.race()
+
+## Promise.resolve()
+返回一个以给定值解析后的`Promise`对象。
+- 如果这个值是个`promise`，那么将返回这个`promise`;
+- 如果这个值是`thenable`(即带有`then`方法)，返回的`promise`会跟随这个`thenable`的对象
+```
+const promise1 = Promise.resolve(123);
+await promise1
+// => 123
+```
