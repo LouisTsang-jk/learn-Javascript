@@ -28,12 +28,13 @@ function compose (middleware) {
       // 判断是否重复执行next
       if (i <= index) return Promise.reject(new Error('next() called multiple times'))
       index = i
-      // 即将执行中间件函数
+      // 取出下一个执行的中间件
       let fn = middleware[i]
-      // 结束执行中间件函数，即将执行next函数
+      // 中间件已全部执行完毕
       if (i === middleware.length) fn = next
       if (!fn) return Promise.resolve()
       try {
+        // 执行后返回成功态Promise
         return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
       } catch (err) {
         return Promise.reject(err)
@@ -82,31 +83,5 @@ one-next
 3. 执行compose
 - 入参校验
 - 返回
-index = -1
-dispatch(0) // 执行第一次`dispatch`
-if (i`(0)` <= index`(-1)`) // false
-index = i`(0)`
-fn = middleware[i`(0)`]`(one)` // fn赋值为第一个中间件函数
-if (0 === middleware.length`(3)`) // false
-if (!fn`(one)`) // false
-next = dispatch.bind(null, i`(0)` + 1) // 执行第二次`dispatch` - dispatch.bind(null, 1)
-  if (i`(1)` <= index`(0)`) // false
-  index = i`(1)`
-  fn = middleware[i`(1)`] // fn赋值为第二个中间件函数
-  if (i`(1)` === middleware.length`(3)`) // false
-  if (!fn`(two)`) // false
-  next = dispatch.bind(null, i`(1)` + 1) // 执行第三次`dispatch` - dispatch.bind(null, 2)
-    if (i`(2)` <= index`(1)`) // false
-    index = i`(2)`
-    fn = middleware[i`(2)`] // fn赋值为第三个中间件函数
-    if (i`(2)` === middleware.length`(3)`) // false
-    if (!fn`(three)` // false
-    next = dispatch.bind(null, i`(2)` + 1) // 执行第四次`dispatch` - dispatch.bind(null, 3)
-      if (i`(3)` <= index`(2)`) // false
-      index = i`(3)`
-      fn = middleware[i`(3)`] // 此处fn应为undefined
-      if (i`(3)` === middleware.length) *// true fn = next`(one=>next)`*  
-      
-
-fn(context, )
+- 
 - 3种错误处理
