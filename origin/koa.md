@@ -18,7 +18,7 @@ function compose (middleware) {
    * @param {Object} context
    * @return {Promise}
    * @api public
-   */
+   */·
 
   return function (context, next) {
     // last called middleware #
@@ -48,23 +48,27 @@ input demo
 const Koa = require('koa');
 const app = new Koa();
 
-app.use(async (ctx, next) => {
+const f1 = async (ctx, next) => {
   console.log('one')
   await next();
   console.log('one-next');
-})
+}
 
-app.use(async (ctx, next) => {
+const f2 = async (ctx, next) => {
   console.log('two')
   await next();
   console.log('two-next');
-})
+}
 
-app.use(async (ctx, next) => {
+const f3 = async (ctx, next) => {
   console.log('three')
   await next();
   console.log('three-next');
-})
+}
+
+app.use(f1)
+app.use(f2)
+app.use(f3)
 
 app.listen(8080)
 ```
@@ -82,6 +86,26 @@ one-next
 2. 执行listen中this.callback()
 3. 执行compose
 - 入参校验
-- 返回
-- 
+- 核心(洋葱模型)
+我理解这部分就是一个递归，执行f1函数的时候，可以分为三部分
+```
+f1-1. console.log('one')
+f1-2. next()
+  执行到next的时候其实是执行了下个中间件，即f2函数
+  f2-1. console.log('two')
+  f2-2. next()
+    执行到next的时候其实是执行了下个中间件，即f3函数
+    f2-1. console.log('three')
+    f2-2. next()
+    f2-3. console.log('three-next')
+  f2-3. console.log('two-next')
+f1-3. console.log('one-next')
+```
+其中很迷惑就是就是中间`fn = next`，我还没想懂这个什么时候会有赋值，因为我自己打印出来也是`undefined`
 - 3种错误处理
+1. `ctx.onerror`
+中间件中的错误捕获
+2. `app.on('error', (err) => {})`
+最外层实例事件监听形式
+3. `app.onerror = (err) => {}`
+重写`onerror`
