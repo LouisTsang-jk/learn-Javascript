@@ -102,10 +102,3 @@ f1-2. next()
 f1-3. console.log('one-next')
 ```
 其中很迷惑就是就是中间`fn = next`，我还没想懂这个什么时候会有赋值，因为我自己打印出来也是`undefined`
-- 3种错误处理
-1. `ctx.onerror`
-中间件中的错误捕获
-2. `app.on('error', (err) => {})`
-最外层实例事件监听形式
-3. `app.onerror = (err) => {}`
-重写`onerror`
