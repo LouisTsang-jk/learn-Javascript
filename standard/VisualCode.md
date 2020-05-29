@@ -21,3 +21,7 @@ ctrl + Enter 向下插入行
 |`E>N`|N是E的子元素|
 |`E+N`|N是E的同级元素|
 |`E^N`|N是E的父元素|
+## 自定义
+1. `shift+command+p`
+2. `configure user snippets`
+3. 找到想要配置的语言然后进行相关的配置
