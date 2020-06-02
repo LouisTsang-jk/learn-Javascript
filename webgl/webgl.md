@@ -31,5 +31,8 @@
 ## 加载外部模型
 通过`Three.js加载器「Loader」`将特定的文本/二进制转化为Three.js对象结构。
 > 贴图的尺寸必须是(2的幂数)*(2的幂数)，为了防止贴图变形，平面的宽度比例需要和贴图的比例一致。
+## 粒子
+`THREE.Sprite`  
+在WebGIRenderer渲染器中使用`THREE.Sprite`
 # 参考
 [ThreeJs 基础入门](https://sq.163yun.com/blog/article/203590884053413888)
