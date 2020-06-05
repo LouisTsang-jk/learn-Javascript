@@ -13,3 +13,10 @@
 6. min-content
 7. minmax(min, max)
 - grid-template-columns
+- grid-auto-flow
+控制自动布局算法如何运作
+1. row
+按照逐行填充来排列元素，必要时增加新行。
+2. column
+通过逐列填充来排列元素，必要时增加新列。
+3. dense
