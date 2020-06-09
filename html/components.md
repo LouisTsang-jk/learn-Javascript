@@ -31,7 +31,14 @@ customElements.define('word-count', WordCount, { extends: 'p' });
 ```
 这段代码表示这个元素叫`word-count`，它的类对象`WordCount`，继承自`<p>`元素。    
 ```
-
+class WordCount extends HTMLParagraphElement {
+  constructor() {
+    // 必须首先调用 super 方法
+    super();
+    // 元素的功能代码
+  }
+}
 ```
+
 # 参考
 ()[]
