@@ -69,5 +69,6 @@ git push
 git checkout <error_branch_name>
 git reset --hard <commit_id>
 ```
-
+#### 撤回commit
+`git commit --amend`
 [廖雪峰git教程](liaoxuefeng.com/wiki/896043488029600/896067008724000)
