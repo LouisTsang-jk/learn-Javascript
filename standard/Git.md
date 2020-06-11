@@ -2,7 +2,9 @@
 > 现在跳槽新公司的git用起来要比以前不一样，以前小作坊随便开发，现在多人同时协作还有多个版本，可是要正正式式好好学习Git相关知识了，不然成天问同事也不是办法。
 git是版本控制系统
 
-## 仓库(repository)
+# 异常
+- 有时候merge失败，merge之后冲突，但是merge是失败状态，这时候关闭webpack服务器再次merge就可能会成功了，原因可能是windows下占用了部分文件的使用
+
 ### 创建仓库
 `git init`  
 同时目录下会多一个隐藏文件夹`.git`，这是git用来跟踪管理版本库的。  
@@ -72,3 +74,4 @@ git reset --hard <commit_id>
 #### 撤回commit
 `git commit --amend`
 [廖雪峰git教程](liaoxuefeng.com/wiki/896043488029600/896067008724000)
+
