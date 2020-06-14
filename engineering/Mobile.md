@@ -13,4 +13,10 @@
 1. 使用bottom进行绝对定位元素与软键盘问题
 
 ## document.hidden
-判断浏览器是否处于可是状态，同时可以监听事件
+判断浏览器是否处于可是状态，同时可以监听事件`visibilitychange`。
+该事件可以检测浏览器标签页是否处于展示状态或者隐藏状态。
+```
+document.addEventListener("visibilitychange", function() {
+  console.log( document.visibilityState );
+});
+```
