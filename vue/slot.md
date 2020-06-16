@@ -23,4 +23,4 @@
 <mouse-position v-slot="{ x, y }">
   Mouse position: {{ x }}, {{ y }}
 </mouse-position>
-````
+```
