@@ -113,3 +113,6 @@ Array.prototype.slice.call(fakeArray);
 const arr = new Array(5).fill([]);
 arr[0] == arr[1] // => true
 ```
+
+## 
+`Function`是有`length`，这个`length`是根据`arguments`决定的。
