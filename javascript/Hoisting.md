@@ -22,4 +22,16 @@ function c(a) {
   function a() {}
 }
 c(2);
+变量提升优先级
+```
+3.```
+var name = 'hello';
+(function () {
+    if (typeof name === 'undefined') {
+        var name = 'world';
+        console.log(name);
+    } else {
+        console.log(name);
+    }
+})();
 ```
