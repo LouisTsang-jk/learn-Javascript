@@ -22,5 +22,6 @@
 - 消息队列
 消息到达消费者前一刻存储消息的地方
 - 回执「ack」
+收到消息后确认消息已经消费的应答
 # 参考
 [](https://juejin.im/post/5dd8cd7ae51d4523501f7331?utm_source=gold_browser_extension)
