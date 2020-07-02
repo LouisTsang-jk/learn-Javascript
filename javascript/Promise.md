@@ -54,3 +54,33 @@ const promise1 = Promise.resolve(123);
 await promise1
 // => 123
 ```
+
+## Polyfill
+```
+new Promise( function(resolve, reject) {...} /* executor */ ).then(res => {  }).catch(err => {  });
+```
+- Promise构造函数执行时立即调用`executor`函数
+- `resolve`/`reject`函数被调用时，分别将promise的状态改为`fulfilled(完成)`/`rejected(失败)`
+```
+class Promise {
+  constructor (executor) {
+    this.status = 'pending'; // pending&fulfilled&rejected
+    this.res = null; // resolve return value
+    this.err = null; // reject return value
+    // resolve
+    const resolve = res => {
+      if (this.status === 'pending') {
+        this.res = res;
+        this.status = 'resolved';
+      }
+      if (this.status === 'pending') {
+        this.err = err;
+        this.status = 'rejected'
+      }
+    }
+    // reject
+    const reject = err => {}
+    executor(resolve, reject);
+  }
+}
+```
