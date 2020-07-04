@@ -11,4 +11,4 @@ console.log(isMobile);
 ### 用户代理检查
 通过访问navigator.userAgent。此方法优先级应低于上述两种方法。
 
-chrome将在81版本后逐步废用User-Agent
+chrome将在81版本后逐步废用`User-Agent`
