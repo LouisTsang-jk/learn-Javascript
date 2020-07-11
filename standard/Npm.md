@@ -4,3 +4,7 @@
 查看npm当前镜像源
 - `npm config set registry https://registry.npm.taobao.org`
 设置npm镜像源为淘宝镜像
+# 安装指定版本
+```
+npm install <package-name>@<version>
+```
