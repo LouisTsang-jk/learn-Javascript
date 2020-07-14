@@ -37,3 +37,31 @@ console.log(requireComponent.keys());
 + 无法通过编辑器快速定位
 + ts不能正常类型推导
 + 编辑器自动补全可能存在问题
+
+## 部署开发环境
+### 本地安装Webpack
+```
+npm install --save-dev webpack webpack-cli
+```
+
+### 安装开发服务器
+```
+npm install --save-dev webpack-dev-server
+```
+package.json
+```
++ "start": "webpack-dev-server --open",
+```
+
+### 模块热替换「HMR」(Hot Module Replacement)
+webpack.config.js
+```
+const webpack = require('webpack');
+entry: {
+  app: './src/index.js'
+}
+devServer: {
+  contentBase: './dist',
+  hot: true
+}
+```
