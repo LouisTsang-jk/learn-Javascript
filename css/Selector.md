@@ -1,6 +1,21 @@
 # Selector
 选择器
-
+## 常规选择器
+正则、匹配开头/结尾
+1. [attr]
+匹配属性名为`attr`的元素
+2. [attr=value]
+匹配属性`attr`为`value`的元素
+3. [attr~=value]
+匹配属性`attr`为**空格分隔**的单词列表，`value`是其中一个
+4. [attr|=value]
+匹配属性`attr`为`value`或者`value-[any]`的元素
+5. [attr^=value]
+匹配属性`attr`为`value`或者`value[any]`的元素
+6. [attr$=value]
+7. [attr*=value]
+8. [attr operator value i]
+9. [attr operator value s]
 ## CSS level 4 (Stage 1)
 ### Validity pseudo-class
 + `:invalid`
