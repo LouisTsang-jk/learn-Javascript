@@ -128,5 +128,11 @@ arr[0] == arr[1] // => true
 (function(...args) {}).length // 0
 ```
 
+## 快速生成递增数组
+```
+[...new Array(10).keys()]
+// => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
 # 参考
 [](https://juejin.im/post/5ef17819f265da02e47d939e)
