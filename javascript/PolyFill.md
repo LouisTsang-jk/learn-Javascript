@@ -11,3 +11,13 @@ Element.prototype.scrollTo = function (x, y) {
 }
 document.documentElement.scrollTo(100);
 ```
+
+## call
+```
+Function.prototype.xcall = function (context, ...arg) {
+  const fn = Symbol('temp');
+  context[fn] = this;
+  context[fn](...arg);
+  delete context[fn];
+}
+```
