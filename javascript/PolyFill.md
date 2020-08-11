@@ -21,3 +21,9 @@ Function.prototype.xcall = function (context, ...arg) {
   delete context[fn];
 }
 ```
+## apply
+```
+Function.prototype.yapply = function () {
+  
+}
+```
