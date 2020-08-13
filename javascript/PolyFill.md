@@ -24,6 +24,19 @@ Function.prototype.xcall = function (context, ...arg) {
 ## apply
 ```
 Function.prototype.yapply = function () {
-  
+  const fn = Symbol('temp');
+  context[fn] = this;
+  context[fn](...arg);
+  delete context[fn];
+}
+```
+
+## bind
+```
+Function.prototype.zbind = function (context, ...firstarg) {
+  const _this = this;
+  const bindFn = function (...secondarg) {
+    return _this.
+  }
 }
 ```
