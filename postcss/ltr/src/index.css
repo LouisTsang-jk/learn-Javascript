@@ -1,0 +1,19 @@
+/* index.css */
+.demo-start {
+  position: relative;
+  display: flex;
+  text-align: start;
+  background-color: red;
+}
+.demo-end {
+  position: relative;
+  text-align: end;
+  background-color: green;
+}
+/* 伪类 */
+.pseudo-classes-after::after {
+  /* 伪类里面的注释 */
+  position: absolute;
+  content: '?';
+}
+
