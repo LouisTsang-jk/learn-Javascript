@@ -14,6 +14,7 @@
 匹配属性`attr`为`value`或者`value[any]`的元素
 6. [attr$=value]
 7. [attr*=value]
+匹配属性`attr`中包含`value`的元素
 8. [attr operator value i]
 9. [attr operator value s]
 ## CSS level 4 (Stage 1)
