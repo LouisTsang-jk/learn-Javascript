@@ -24,7 +24,7 @@ class Publisher {
   notify () {
     console.log('Publisher notify invoked');
     this.observer.forEach((observer) => {
-      observer.update(this)
+      observer.update(this);
     })
   }
 }
@@ -34,6 +34,24 @@ class Observer {
     console.log('Observer created');
   }
   update () {
-    console.log('Observer update invoked')
+    console.log('Observer update invoked');
+  }
+}
+// application
+class PrdPublisher extends Publisher {
+  constructor () {
+    super();
+    this.prdState = null;
+    this.observers = [];
+    console.log('PrdPublisher created');
+  }
+  getState () {
+    console.log('PrdPublisher.getState invoked');
+    return this.prdState;
+  }
+  setState (state) {
+    console.log('PrdPublisher.setState invoked');
+    this.prdState = state;
+    this.notify();
   }
 }
