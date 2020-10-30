@@ -38,3 +38,7 @@
 
 # 禁止input调用原生软键盘
 添加readonly
+
+# iphone6,7,8出现不换行的问题
+1. `white-space: normal`
+2. `word-break: break-all`

@@ -4,16 +4,15 @@
 class Publisher {
   constructor () {
     this.observers = [];
-    console.log('Publisher created');
   }
   // 增加订阅者
   add (observer) {
-    console.log('Publisher add invoked');
     this.observers.push(observer);
+    console.log('当前订阅者列表:', this.observers);
   }
   // 移除订阅者
   remove (observer) {
-    console.log('Publisher remove invoked');
+    console.log('Publisher remove invoked', this.observers);
     this.observers.forEach((item, index) => {
       if (item === observer) {
         this.observers.splice(index, 1);
@@ -38,6 +37,7 @@ class Observer {
   }
 }
 // application
+// 模拟应用场景
 class PrdPublisher extends Publisher {
   constructor () {
     super();
@@ -53,5 +53,22 @@ class PrdPublisher extends Publisher {
     console.log('PrdPublisher.setState invoked');
     this.prdState = state;
     this.notify();
+  }
+}
+
+class DeveloperObserver extends Observer {
+  constructor () {
+    super();
+    this.prdState = [];
+    console.log('DeveloperObserver created');
+  }
+  update (publisher) {
+    console.log('DeveloperObserver.update invoked');
+    this.prdState = publisher.getState();
+    this.work();
+  }
+  work () {
+    const prd = this.prdState;
+    console.log('996');
   }
 }
