@@ -1,10 +1,10 @@
 # 理论
 WS
 EventLoop
-暂时性死区
+√暂时性死区
 闭包
-作用域
-文件切割上传
+√作用域
+文件切割上传slice
 行内/块级/替换
 变量提升
 Polypill promise
