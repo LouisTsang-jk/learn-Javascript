@@ -1,4 +1,5 @@
 # 理论
+WS
 EventLoop
 暂时性死区
 闭包
@@ -14,8 +15,11 @@ Vue2/3实现原理
 洋葱模型
 Prototype
 继承
-WS
 1px
+Nodes和Element区别
+defer和async
+原型链
+前端安全: https://segmentfault.com/a/1190000037657222
 # 应用
 # 算法
 动态规划(找硬币/剪绳子)
@@ -32,8 +36,9 @@ WS
 如果要设计一个mvvm框架，处理哪些问题？
 (解决思路)
 # 扩展学习
-chrome插件(ast)
+chrome插件(ast)(显示边框)(自定义样式)（自定义脚本）
 vsc插件(ast)
+WS
 # 其他
 https://juejin.im/post/6844903570001625102
 https://juejin.im/book/6844733800300150797
