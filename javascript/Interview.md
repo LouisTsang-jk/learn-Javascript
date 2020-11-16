@@ -206,3 +206,77 @@ console.log(firstOne(str));
 # 如何实现图片懒加载
 给img标签先链接到一个空白的图片，添加自定义属性`data-src`存放真正图片的src，js监听到该图片进入可视范围的时候，再将`data-src`的值赋予`src`
 
+# 传入数组对象和一个回调函数，将数组顺序打乱，但包含函数返回true的则保持位置不变
+- input
+```
+arr = [
+	{
+		name: 'A'
+	}, {
+		name: 'B',
+		sticky: true
+	}, {
+		name: 'C'
+	}, {
+		name: 'D',
+		sticky: true
+	}, {
+		name: 'E'
+	}
+]
+```
+- code
+```
+/**
+ * 打乱数组(可固定)
+ * @param {array} arr - 目标数组
+ * @param {function} fn - 类似fitler用法，如果返回true则表明改值不参与随机
+ */
+function shuffleFn (arr, fn) {
+	const shuffleArr = []; // -> 需要固定的值
+	const stickyIndex = []; // -> 需要固定的值所固定的索引值
+	const stickyArr = arr.filter((e, index) => {
+		const result = fn(e)
+		if (result) {
+			stickyIndex.push(index)
+		}
+		if (!result) {
+			shuffleArr.push(e)
+		}
+		return result
+  })
+  // 这里用到lodash的随机
+	const res = _.shuffle(shuffleArr)
+	stickyArr.forEach((e, index) => {
+		res.splice(stickyIndex[index], 0, e)
+  })
+  return res
+}
+```
+
+# 用reduce实现map
+```
+Array.prototype.fakeMap = function (processFn) {
+    if (processFn) {
+        return this.reduce((acc, cur) => {
+            return [...acc, processFn(cur)];
+        }, [])
+    } else {
+        return this;
+    }
+}
+```
+# 用reduce实现filter
+```
+Array.prototype.fakeFilter = function (fn) {
+    const res = this.reduce((acc, cur) => {
+        const temp = fn(cur)
+        if (temp) {
+            return [...acc, cur]
+        } else {
+            return acc
+        }
+    }, [])
+    return res
+}
+```

@@ -1,23 +1,24 @@
 # 理论
+√暂时性死区
+√作用域
+√用reduce实现filter/map
+√变量提升
+√1px
+√defer和async
 WS
 EventLoop
-√暂时性死区
 闭包
-√作用域
 文件切割上传slice
 行内/块级/替换
-变量提升
 Polypill promise
-用reduce实现filter/map
 Url输入到地址栏发生的事情
 首屏/白屏优化
 Vue2/3实现原理
 洋葱模型
 Prototype
 继承
-1px
+https/http2
 Nodes和Element区别
-defer和async
 原型链
 前端安全: https://segmentfault.com/a/1190000037657222
 # 应用
@@ -33,6 +34,7 @@ defer和async
 适配器
 # 实际工作
 什么时候使用vuex
+-> 多个应用场景对同一个值进行修改
 如果要设计一个mvvm框架，处理哪些问题？
 (解决思路)
 # 扩展学习
