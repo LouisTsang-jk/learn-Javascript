@@ -1,5 +1,6 @@
 # URL Scheme
 URL是统一资源定位符,`Scheme`就是标识资源的访问方式。
+手机唤起app
 - `IOS`
 在`info.plist`文件添加`URL types`注册Scheme。
 - `Android`
