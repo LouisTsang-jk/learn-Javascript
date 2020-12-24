@@ -1,11 +1,11 @@
-Function.prototype.call = function (context) {
+Function.prototype.neoCall = function (context) {
   context = context ? Object(context) : window;
   context.fn = this;
   const args = [];
   for (let i = 1; i < arguments.length; i++) {
-    args.push(`arguments[${i}]`);
+    args.push(`arguments[${i}]`); // 这里是考虑到下面eval
   }
-  const res = eval(`context.fn(${args})`);
+  const res = eval(`context.fn(${args})`); // 字符串 + 数组(调用toString)
   delete context.fn;
   return res;
 }
