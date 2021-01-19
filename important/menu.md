@@ -6,11 +6,11 @@
 √1px
 √defer和async
 WS
-EventLoop
-闭包
+√EventLoop
+√闭包
 文件切割上传slice
 行内/块级/替换
-Polypill
+Polyfill
 - promise
 - call/apply
 - bind
@@ -27,11 +27,11 @@ Url输入到地址栏发生的事情
 - 页面渲染
 Vue2/3实现原理
 洋葱模型
-Prototype
+√Prototype
 继承方式
 https/http2
 Nodes和Element区别
-原型链
+√原型链
 前端安全: https://segmentfault.com/a/1190000037657222
 # 应用
 # 算法
