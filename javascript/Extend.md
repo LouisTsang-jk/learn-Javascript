@@ -1,19 +1,36 @@
 # 继承「extend」
 ## 原型链继承
 ```
-function SuperType () {
-    this.property = true;
+function Super () {
+    this.a = 'a';
 }
-SuperType.prototype.getSuperValue = function () {
-    return this.property;
-};
-function SubType () {
-    this.subproperty = false;
+function Sub () {
+    this.b = 'b';
 }
-SubType.prototype = new SuperType();
-SubType.prototype.getSubValue = function () {
-    return this.subproperty;
+Sub.prototype = new Super();
+Sub.prototype.constructor = Sub;
+```
+## 借用构造函数
+```
+function Super () {
+    this.a = 'a';
 }
-var instance = new SubType();
-alert(instance.getSuperValue());
+function Sub () {
+    this.b = 'b';
+    Super.call(this);
+}
+```
+## ES6 Class
+```
+class Super {
+    constructor (a) {
+        this.a = a;
+    }
+}
+class Sub extends Super {
+    constructor (a, b) {
+        super(a);
+        this.b = b;
+    }
+}
 ```
