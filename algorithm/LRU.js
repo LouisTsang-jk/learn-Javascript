@@ -47,21 +47,43 @@ class LRU {
     return node ? node.value : -1;
   }
   put (key, value) {
-    if (Object.keys(this.hashmap).length === this.capacity) {
+    if (Object.keys(this.hashmap).length === this.capacity && !this.hashmap.hasOwnProperty(key)) {
       // oversize
       const overNode = this.dummyTail.prev;
       this.removeNode(overNode);
       delete this.hashmap[overNode.key];
     }
     const target = new DoubleNode(key, value);
+    if (this.hasOwnProperty(key)) {
+      
+    } else {
+
+    }
     this.insertAfter(this.dummyHead, target);
     this.hashmap[key] = target;
   }
 }
 
 const t1 = new LRU(2);
-t1.put(1, 1);
-t1.put(2, 2);
-t1.get(1);
-t1.put(3, 3);
-t1.get(2); // -> -1
+// t1.put(1, 1);
+// t1.put(2, 2);
+// t1.get(1);
+// t1.put(3, 3);
+// t1.get(2); // -> -1
+
+// const arr = [];
+// arr.push(t1.get(2));
+// arr.push(t1.put(2, 6));
+// arr.push(t1.get(1));
+// arr.push(t1.put(1, 5));
+// arr.push(t1.put(1, 2));
+// arr.push(t1.get(1));
+// arr.push(t1.get(2));
+
+const arr = [];
+arr.push(t1.put(2, 1));
+arr.push(t1.put(1, 1));
+arr.push(t1.put(2, 3));
+arr.push(t1.put(4, 1));
+arr.push(t1.get(1));
+arr.push(t1.get(2));
