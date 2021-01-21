@@ -43,3 +43,13 @@ define(function (rerquire, exports) {
 ## UMD(Universal Module Definition)
 通用模块，兼容AMD和commonJS规范。AMD异步加载，commonJS同步加载。
 ## ES6
+可以将文件后缀改为`.mjs`，或者修改`package.json``{ type: "module" }`。
+使用`import`命令加载CommonJS模块。依赖分析在哪个阶段完成，最底层的模块第一个执行。
+- ES6模块加载CommonJS模块
+只能整体加载，不能只加载某项。因为需要噢静态代码分析，CommonJS模块输出接口是`module.exports`，只能整体加载。
+# 区别
+1. CommonJS模块输出的是值的拷贝。
+2. JS引擎对脚本静态分析的时候，遇到模块加载命令`import`，就会生成一个只读引用。当脚本真正执行时，再根据这个只读引用，到被加载的那个模块去取值。
+3. CommonJS模块是运行时加载、ES6模块是编译时输出接口
+  - CommonJS 模块就是对象；即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载”。
+  - ES6 模块不是对象，而是通过 export 命令显式指定输出的代码，import时采用静态命令的形式。即在import时可以指定加载某个输出值，而不是加载整个模块，这种加载称为“编译时加载”。
