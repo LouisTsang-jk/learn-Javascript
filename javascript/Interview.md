@@ -129,25 +129,25 @@ function $new(){
 + View 视图层
 + ViewModel 数据视图层
 
-# 优化首屏幕
+# 11. 优化首屏幕
 1. Vue-router异步路由
 2. 不打包库文件,外部引入，防止阻塞
 3. gzip
 
-# 减少白屏时间
+# 12. 减少白屏时间
 1. Vue-router异步路由
 2. webpack打包优化
 3. 骨架屏
 4. 模版预加载
 
-# Tree-shaking原理
+# 13. Tree-shaking原理
 利用ES6模块的静态引入，编译时可以知道实际加载情况，分析变量是否被使用或引用，从而删除代码。
 为了达到更高的效果，减少代码的副作用。
 
-# docContentLoad和onLoad区别
+# 14. docContentLoad和onLoad区别
 
 
-# TODO
+# 15. TODO
 ```
 (function() {
     console.log(age);
@@ -157,7 +157,7 @@ function $new(){
 })();
 ```
 
-# TODO
+# 16. TODO
 ```
 const myPromise = () =>
   Promise.resolve('I have resolved')
@@ -176,7 +176,7 @@ firstFunc();
 secondFunc();
 ```
 
-# 在一个字符串中找到第一个只出现一次的字符。如输入abaccdefbf，则输出d，找不到则输出false
+# 17. 在一个字符串中找到第一个只出现一次的字符。如输入abaccdefbf，则输出d，找不到则输出false
 ```
 let str = "abaccdefbf";
 function firstOne(str){
@@ -203,10 +203,10 @@ console.log(firstOne(str));
 ```
 
 
-# 如何实现图片懒加载
+# 18. 如何实现图片懒加载
 给img标签先链接到一个空白的图片，添加自定义属性`data-src`存放真正图片的src，js监听到该图片进入可视范围的时候，再将`data-src`的值赋予`src`
 
-# 传入数组对象和一个回调函数，将数组顺序打乱，但包含函数返回true的则保持位置不变
+# 19. 传入数组对象和一个回调函数，将数组顺序打乱，但包含函数返回true的则保持位置不变
 - input
 ```
 arr = [
@@ -254,7 +254,7 @@ function shuffleFn (arr, fn) {
 }
 ```
 
-# 用reduce实现map
+# 20. 用reduce实现map
 ```
 Array.prototype.fakeMap = function (processFn) {
     if (processFn) {
@@ -266,7 +266,7 @@ Array.prototype.fakeMap = function (processFn) {
     }
 }
 ```
-# 用reduce实现filter
+# 21. 用reduce实现filter
 ```
 Array.prototype.fakeFilter = function (fn) {
     const res = this.reduce((acc, cur) => {
@@ -280,3 +280,12 @@ Array.prototype.fakeFilter = function (fn) {
     return res
 }
 ```
+
+# 22. 输入URL地址到看到地址
+    1. URL解析
+    2. 缓存检查
+    3. DNS解析
+    4. TCP三次握手
+    5. 数据传输
+    6. TCP四次挥手
+    7. 页面渲染
