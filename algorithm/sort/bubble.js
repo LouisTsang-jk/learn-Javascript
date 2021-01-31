@@ -1,4 +1,4 @@
-// 冒泡算法
+// 冒泡算法(升序)
 function random (min = 0, max = 999) {
   return Math.round(Math.random() * (max - min) + min);
 }
@@ -8,9 +8,17 @@ arr = arr.map(e => {
 });
 console.log('arr', arr);
 function bubble (arr) {
-  return arr.reduce((acc, cur) => {
-    return acc[acc.length ? acc.length - 1 : 0] > cur ? [...acc, cur] : [cur, ...acc];
-  }, []);
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 -i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
+        swap([arr[j], arr[j + 1]]);
+      }
+    }
+  }
+  return arr;
 }
 function swap ([a, b]) {
   return [b, a];
