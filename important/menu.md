@@ -8,7 +8,7 @@
 WS
 √EventLoop
 √闭包
-文件切割上传slice
+√文件切割上传slice
 行内/块级/替换
 Polyfill
 - promise
@@ -17,7 +17,7 @@ Polyfill
 - symbol
 - instanceof
 - event emitter
-Url输入到地址栏发生的事情
+√Url输入到地址栏发生的事情
 - URL解析
 - 缓存检查
 - DNS解析
@@ -28,7 +28,7 @@ Url输入到地址栏发生的事情
 Vue2/3实现原理
 洋葱模型
 √Prototype
-继承方式
+√继承方式
 https/http2
 Nodes和Element区别
 √原型链
