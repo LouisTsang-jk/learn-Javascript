@@ -38,12 +38,13 @@ update time: 2021-2-11 11:11:11
 
 ## 外边距折叠(margin collapse)
 理解外边距的一个关键是外边距折叠的概念。如果你有两个外边距相接的元素，这些外边距将合并为一个外边距，即最大的单个外边距的大小。这种行为只会发生在垂直方向。
-### 避免坍塌
-- 不是block元素
-- 有padding或者border
-- 设置position:absolute
-> 规避技巧：给父元素添加padding: 0.05px;
+### 形成重叠
+- 同层相邻元素之间
+- 没有内容将父元素和后代元素分开
+- 空的块级元素
+
 
 # 参考
-(盒模型-MDN)[https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model#%E4%BB%80%E4%B9%88%E6%98%AFcss_%E7%9B%92%E6%A8%A1%E5%9E%8B]
-(为什么margin只会上下溢出/重叠而不会左右溢出/重叠?)[https://www.zhihu.com/question/442096581/answer/1707288787?utm_source=wechat_session&utm_medium=social&utm_oi=909824170932719616&utm_content=group2_Answer&utm_campaign=shareopn]
+- (盒模型-MDN)[https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model#%E4%BB%80%E4%B9%88%E6%98%AFcss_%E7%9B%92%E6%A8%A1%E5%9E%8B]
+- (为什么margin只会上下溢出/重叠而不会左右溢出/重叠?)[https://www.zhihu.com/question/442096581/answer/1707288787?utm_source=wechat_session&utm_medium=social&utm_oi=909824170932719616&utm_content=group2_Answer&utm_campaign=shareopn]
+- (外边距坍塌)[https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing]
