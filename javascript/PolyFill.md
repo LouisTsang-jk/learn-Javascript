@@ -40,3 +40,6 @@ Function.prototype.zbind = function (context, ...firstarg) {
   }
 }
 ```
+
+## Promise
+<!-- TODO -->
