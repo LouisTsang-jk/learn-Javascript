@@ -6,9 +6,13 @@
 
 每个组件实例都对应一个 watcher 实例，它会在组件渲染的过程中把“接触”过的数据 property 记录为依赖。之后当依赖项的 setter 触发时，会通知 watcher，从而使它关联的组件重新渲染。
 
-![依赖](pic/1.png)
+![依赖](pic/1.png) 
 
 > 由于 JavaScript 的限制，Vue 不能检测数组和对象的变化。尽管如此我们还是有一些办法来回避这些限制并保证它们的响应性。
+
+# 依赖跟踪(dependency tracking)
+
+
 
 # 参考
 [深入响应式原理](https://cn.vuejs.org/v2/guide/reactivity.html)

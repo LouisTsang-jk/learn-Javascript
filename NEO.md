@@ -10,12 +10,20 @@
   ## BFC
 
   ## 边距重叠
-
+  边界折叠(margin collapsing)
+  以下三种情况会形成外边距重叠：
+  + 同一层相邻元素之间
+  相邻两个元素之间的外边距重叠，除非后一个元素加上clear-fix清除浮动
+  + 没有内容将父元素和后代元素分开
+  没有border、padding、content、BFC、clear-fix、max-height、min-height来分开一个块级元素的上/下边界，则会出现父块元素和其内后代块元素外边界重叠，重叠部分最终会溢出到父级块元素外面。
+  + 空的块级元素
 # 存储
   ## indexDB
   ## sessionStorage
   ## localStorage
   ## http缓存
+  ## cookies
+  ## 离线缓存(application cache)【淘汰】
 # 优化
   ## 打包
   ## 性能优化
@@ -47,7 +55,10 @@
   - attrs
   - listeners
   - 虚拟DOM优点
-  - 组件间通信方式
+    1. 组件高度抽象化
+    2. 实现SSR/同构渲染
+    3. 框架跨平台
+  - action与mutation区别
  ## Koa
   - 洋葱模型
  ## Webpack
@@ -65,19 +76,18 @@
 # 继承方式
 # 作用域
 # 事件循环
-
+[EventLoop](javascript/EventLoop.md)
 # 安全
+[CSRF](javascript/AJAX.md#CSRF)
 # 工程化
-# 同源策略
 # 请求
  - ajax
  - fetch
 # 跨域
-[跨域](javascript/CORS.md)
+[跨域](javascript/CORS.md#同源策略)
 # 动画优化
   - 重绘
   - 回流
-
 # 算法
 ## 动态规划
   - 爬楼梯
@@ -97,7 +107,7 @@
 - 优化打包速度
 - 封装Webpack
 # 克隆
-
+[克隆](javascript/Clone.md)
 # DOM渲染过程
 1. 构建DOM树
 2. 构建CSSOM样式表
@@ -105,8 +115,12 @@
 4. 布局
 5. 绘制
 
-# 面试问题
+# 部门负责人
 - 部门负责内容
-- 工作时间
 - Code Review
 - 分享会
+
+# HR
+- 工作时间
+- 加班补贴
+- 年终奖
