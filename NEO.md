@@ -18,12 +18,13 @@
   没有border、padding、content、BFC、clear-fix、max-height、min-height来分开一个块级元素的上/下边界，则会出现父块元素和其内后代块元素外边界重叠，重叠部分最终会溢出到父级块元素外面。
   + 空的块级元素
 # 存储
+  ## http缓存
   ## indexDB
   ## sessionStorage
   ## localStorage
-  ## http缓存
   ## cookies
   ## 离线缓存(application cache)【淘汰】
+
 # 优化
   ## 打包
   ## 性能优化
@@ -88,6 +89,7 @@
 # 动画优化
   - 重绘
   - 回流
+# 节流/消抖
 # 算法
 ## 动态规划
   - 爬楼梯
