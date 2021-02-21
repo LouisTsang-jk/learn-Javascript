@@ -9,6 +9,22 @@
 
 # 浏览器渲染
 [浏览器渲染](standard/CRP.md)
+
+# DOM渲染过程
+1. 构建DOM树
+2. 构建CSSOM样式表
+3. 构建渲染树
+4. 布局
+5. 绘制
+# 页面渲染中执行的事件
+1. 发出加载资源的请求
+2. document加载结束并解析,此时css等其他资源未加载完成
+此时`readyState`为`interactive`，表示document已经load并解析完成。触发`readystatechange`，然后触发`DOMContentLoaded`
+3. css等资源加载完毕
+触发`window.load`事件
+
+# async & defer(script属性)
+
 # CSS
   ## 清除浮动
   [浮动](css/Float.md)
@@ -37,6 +53,12 @@
   ## 离线缓存(application cache)【淘汰】
 
 # 优化
+  ## 构建速度
+  - 开启babel-loader缓存
+  - noParse避免重复打包
+  - happypack多进程打包
+  - ParallelUglifyPlugin多进程压缩
+  - DllPlugin 动态链接库插件
   ## 打包
   ## 性能优化
     ### 工程化
@@ -97,6 +119,8 @@
  - fetch
 # 跨域
 [跨域](javascript/CORS.md#同源策略)
+
+# GC
 # 动画优化
   - 重绘
   - 回流
@@ -125,13 +149,8 @@
 - 封装Webpack
 # 克隆
 [克隆](javascript/Clone.md)
-# DOM渲染过程
-1. 构建DOM树
-2. 构建CSSOM样式表
-3. 构建渲染树
-4. 布局
-5. 绘制
-
+# 文件上传
+[文件上传](https://juejin.cn/post/6844904106658643982)
 # http1.0/http1.1/http2/https
 [HTTP](https://github.com/tang-yue/interview/tree/master/network)
 
