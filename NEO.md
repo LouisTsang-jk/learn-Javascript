@@ -1,3 +1,14 @@
+# url到页面
+1. URL解析
+2. 缓存检查
+3. DNS解析
+4. TCP三次握手
+5. 数据传输
+6. TCP四次挥手
+7. 页面渲染
+
+# 浏览器渲染
+[浏览器渲染](standard/CRP.md)
 # CSS
   ## 清除浮动
   [浮动](css/Float.md)
@@ -8,7 +19,7 @@
   ## 选择器权重
   [CSS权重](css/Specificity.md)
   ## BFC
-
+  [BFC](css/ElementBox.md#BFC)
   ## 边距重叠
   边界折叠(margin collapsing)
   以下三种情况会形成外边距重叠：
@@ -89,20 +100,24 @@
 # 动画优化
   - 重绘
   - 回流
+  [回流&重绘](javascript/Reflow&Repaint.md)
 # 节流/消抖
 # 算法
 ## 动态规划
   - 爬楼梯
   - 找硬币
   - 
-
+## 二分查找(leetcode 704)
 # 手写代码
+  [手写](https://github.com/tang-yue/interview/tree/master/coding)
   ## promise
   ## instanceof
   ## call
   ## apply
   ## bind
   ## new
+  ## EventEmitter
+  [手写发布--订阅模式](https://github.com/tang-yue/interview/tree/master/coding#手写发布--订阅模式)
 
 # 应用
 - 虚拟列表
@@ -116,6 +131,9 @@
 3. 构建渲染树
 4. 布局
 5. 绘制
+
+# http1.0/http1.1/http2/https
+[HTTP](https://github.com/tang-yue/interview/tree/master/network)
 
 # 部门负责人
 - 部门负责内容

@@ -34,6 +34,7 @@
 HTTP头中有Referer字段，记录请求的来源地址  
 (甚至依靠这个可以达到`防止图片盗链`的效果)
 3. Token验证
+4. Cookie SameSite
 ---
 ## XMLHttpRequest
 GET
