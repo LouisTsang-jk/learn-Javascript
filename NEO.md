@@ -10,13 +10,7 @@
 # 浏览器渲染
 [浏览器渲染](standard/CRP.md)
 
-# DOM渲染过程
-1. 构建DOM树
-2. 构建CSSOM样式表
-3. 构建渲染树
-4. 布局
-5. 绘制
-# 页面渲染中执行的事件
+# 页面渲染中执行的事件「TODO」
 1. 发出加载资源的请求
 2. document加载结束并解析,此时css等其他资源未加载完成
 此时`readyState`为`interactive`，表示document已经load并解析完成。触发`readystatechange`，然后触发`DOMContentLoaded`
@@ -53,7 +47,7 @@
   ## 离线缓存(application cache)【淘汰】
 
 # 优化
-  ## 构建速度
+  ## 构建速度「TODO」
   - 开启babel-loader缓存
   - noParse避免重复打包
   - happypack多进程打包
@@ -163,3 +157,4 @@
 - 工作时间
 - 加班补贴
 - 年终奖
+- 年假
