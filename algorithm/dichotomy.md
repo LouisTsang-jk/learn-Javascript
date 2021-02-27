@@ -5,8 +5,8 @@ target(数组arr中的一个元素)
 输出：
 index(target为于arr中的索引)
 例如：
-const arr = [1,2,3,4,5];
-const target = 3;
+const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const target = 1;
 dichotomy(arr,target);
 //-> 2
 
@@ -16,7 +16,7 @@ function dichotomy(arr, target) {
     let low = 0;
     let high = arr.length - 1;
     while (low <= high) {
-      let mid = Math.floor((low + high) / 2);
+      let mid = high >> 1;
       console.log(`low:${low},mid:${mid},high:${high}`);
       if (target === arr[mid]) {
         return mid;
