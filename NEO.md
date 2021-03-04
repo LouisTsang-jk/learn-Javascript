@@ -87,20 +87,31 @@
     2. 实现SSR/同构渲染
     3. 框架跨平台
   - action与mutation区别
+  - v-if和v-show区别
+  - 组件间通信
+    1. props/$emit
+    2. ref
+    3. $parent
+    4. $attrs
+    5. $listeners
+    6. provide/inject
+    7. $bus
+    8. vuex
  ## Koa
   - 洋葱模型
  ## Webpack
   - 工作原理
   - 优化
-  - 
 # 模块化
   [模块化](javascript/Module.md)
 # This
+对于函数而言，指向最后调用函数的那个对象，是函数运行时内部自动生成的一个内部对象，只能在函数内部使用；对于全局而言，this 指向 window。
 # 闭包
 *闭包能使内部函数访问外部函数的作用域。*在JavaScript，函数在每次创建时生成闭包。
 # 原型链
 作用域意味着代码区中变量和其他资源的可见性。
 # 词法作用域
+
 # 继承方式
 # 作用域
 # 事件循环

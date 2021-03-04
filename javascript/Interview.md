@@ -289,3 +289,8 @@ Array.prototype.fakeFilter = function (fn) {
     5. 数据传输
     6. TCP四次挥手
     7. 页面渲染
+
+# 23. 匹配域名
+```
+/(?<=\/\/).+(?=\.)/
+```
