@@ -1,18 +1,26 @@
 # Spreadsheet
+
+## Develop Environment
+- Vite/Webpack
+- Rollup
+
+# Design
+## Class
 - Sheet
 - Cell
 - Scroll
 - EditBox
 - ImageBox
 - ChartBox
-
-# Class
-## Plugin
+## PluginSystem
 
 ## EventEmitter
 
 ## Painter
 
+# Option
+- RTF
+- 
 # Feature
 ## RTF
 ## Copy/Paste
@@ -20,3 +28,12 @@
 ## Redo/Cancel
 ## Wrap
 ## Visual Render
+## Sort/Filter
+## Search
+## Freeze
+
+# Optimization
+- First Load
+- Part Render
+- Worker
+- Cache (IndexDB)
