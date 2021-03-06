@@ -1,5 +1,8 @@
 # Spreadsheet
 
+## TODO
+- render cell
+
 ## Develop Environment
 - Vite/Webpack
 - Rollup
@@ -13,6 +16,11 @@
 - ImageBox
 - ChartBox
 ## PluginSystem
+- merge
+- RTF
+- Image
+- Chart
+- Fn
 
 ## EventEmitter
 
