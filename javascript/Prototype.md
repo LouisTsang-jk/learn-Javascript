@@ -1,8 +1,9 @@
-# 原型 `Prototype`  
+# 原型(Prototype) 
 每个实例对象(object)都有一个*私有属性(__proto__)*。指向它的构造函数的*原型对象(prototype)*。这个原型对象也有它的原型对象，层层向上直到原型对象为null。  
 *几乎所有JavaScript中的对象都是位于原型链顶端的`Object`的实例*
 *所有类型的对象都可以认为是由相应的构造函数创建出来*
-# 原型链 `Prototype chain`
+# 原型链
+当访问一个对象的某个属性时，浏览器会先查找该对象是否有这个属性，如果没有，会查找该对象的__proto__（也就是实例化该对象的函数的prototype）中是否有这个属性，如果有，将会使用__proto__中的这个属性，否则就会继续往下查找(__proto__中的__proto__)，一级一级往下，直到构造函数（默认情况下，所有函数的原型属性的__proto__就是window.Object.prototype），所以假如一直到在window.Object.prototype中都无法找到该属性(即整条原型链上都没找到)，浏览器就会返回undefined
 ```
 function Animal(){
 

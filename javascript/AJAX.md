@@ -24,7 +24,8 @@
 6. `#SomewhereInTheDocument`(锚点)
 资源本身的另一部分的锚点，锚点表示资源中的一种“书签”，给浏览器显示位于该“加书签”位置的内容的方向。*＃后面的部分（也称为片段标识符）从来没有发送到请求的服务器。*
 ---
-## CSRF(Cross Site Request Forgery)
+## CSRF  
+(Cross Site Request Forgery)
 跨站请求伪造  
 劫持受信任用户向服务器发送非预期请求
 

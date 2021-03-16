@@ -39,7 +39,7 @@
   没有border、padding、content、BFC、clear-fix、max-height、min-height来分开一个块级元素的上/下边界，则会出现父块元素和其内后代块元素外边界重叠，重叠部分最终会溢出到父级块元素外面。
   + 空的块级元素
 # 存储
-  ## http缓存
+  ## http缓存(启发式)
   ## indexDB
   ## sessionStorage
   ## localStorage
@@ -79,6 +79,7 @@
  ## Vue
   - 双向绑定
   - 依赖收集
+  依赖在getter中收集，在setter中触发执行。
   - Diff算法
   - attrs
   - listeners
@@ -101,6 +102,13 @@
   - 洋葱模型
  ## Webpack
   - 工作原理
+    1. 初始化参数
+    2. 开始编译
+    3. 确定入口
+    4. 编译模块
+    5. 完成模块编译
+    6. 输出资源
+    7. 输出完成
   - 优化
 # 模块化
   [模块化](javascript/Module.md)
@@ -110,8 +118,9 @@
 *闭包能使内部函数访问外部函数的作用域。*在JavaScript，函数在每次创建时生成闭包。
 # 原型链
 作用域意味着代码区中变量和其他资源的可见性。
+[原型链](javascript/Prototype.md#原型链)
 # 词法作用域
-
+词法作用域也就是在词法阶段定义的作用域。(闭包原理)
 # 继承方式
 # 作用域
 # 事件循环
@@ -159,6 +168,7 @@ XSS
 # 文件上传
 [文件上传](https://juejin.cn/post/6844904106658643982)
 # http1.0/http1.1/http2/https
+
 [HTTP](https://github.com/tang-yue/interview/tree/master/network)
 
 # 部门负责人
