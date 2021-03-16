@@ -151,6 +151,7 @@ XSS
 # 手写代码
   [手写](https://github.com/tang-yue/interview/tree/master/coding)
   ## promise**
+  [Promise](javascript/Promise.md)
   ## instanceof
   ## call
   ## apply
