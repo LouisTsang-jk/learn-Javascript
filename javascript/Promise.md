@@ -1,6 +1,10 @@
 # Promise
 `Promise`对象用于表示一个异步操作的最终完成(或失败)，及其结果值。  
 本质上`Promise`是一个函数返回的对象，我们可以在其上面绑定回调函数，避免在初始阶段将回调函数作为参数传入函数。
+## 状态
+- pending
+- resolve
+- reject
 ## Demo
 callback
 ```

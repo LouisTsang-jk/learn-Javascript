@@ -10,5 +10,32 @@
 限制：   
 1 <= target <= 10^5
 ```
-
+/**
+ * @param {number} target
+ * @return {number[][]}
+ */
+var findContinuousSequence = function(target) {
+  // 双指针
+  let i = 1;
+  let j = 2;
+  let s = 3;
+  const result = [];
+  while (i < j) {
+    if (s === target) {
+      const answer = [];
+      for (let k = i; k <= j; k++) {
+        answer.push(k);
+      }
+      result.push(answer);
+    }
+    if (s >= target) {
+      s -= i;
+      i++;
+    } else {
+      j++;
+      s += j;
+    }
+  }
+  return result;
+};
 ```
