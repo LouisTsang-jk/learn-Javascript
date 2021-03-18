@@ -38,6 +38,19 @@
   + 没有内容将父元素和后代元素分开
   没有border、padding、content、BFC、clear-fix、max-height、min-height来分开一个块级元素的上/下边界，则会出现父块元素和其内后代块元素外边界重叠，重叠部分最终会溢出到父级块元素外面。
   + 空的块级元素
+  ## 垂直居中
+    1. flex
+    2. grid
+    3. transform + position: absolute / fixed
+    4. Vertical-Align
+    5. line-height
+  ## 权重
+  1. 内联样式(style)
+  2. id选择器
+  3. 类选择器   
+  !important > 内联 > ID > 类 > 元素 > 继承 > 通配符
+  > 权重大的css生效
+  > 相同权重，后面规则覆盖前面的规则
 # 存储
   ## http缓存(启发式)
   ## indexDB
@@ -88,6 +101,8 @@
     2. 实现SSR/同构渲染
     3. 框架跨平台
   - action与mutation区别
+  action异步
+  mutation同步
   - v-if和v-show区别
   - 组件间通信
     1. props/$emit
@@ -114,6 +129,10 @@
   [模块化](javascript/Module.md)
 # This
 对于函数而言，指向最后调用函数的那个对象，是函数运行时内部自动生成的一个内部对象，只能在函数内部使用；对于全局而言，this 指向 window。
+> *this 永远指向最后调用它的那个对象*
+- 普通函数中 this 的指向，是 this 执行时的上下文
+- 箭头函数中 this 的指向，是 this 定义时的上下文
+
 # 闭包
 *闭包能使内部函数访问外部函数的作用域。*在JavaScript，函数在每次创建时生成闭包。
 # 原型链
@@ -134,8 +153,15 @@ XSS
  - ajax
  - fetch
 # 跨域
+同源策略：协议、域名、端口
+1. JSONP
+2. CORS
+服务端设置:Access-Control-Allow-Origin
+3. postMessage
+4. WebSocket
+5. Node中间件
+6. Nginx反向代理 
 [跨域](javascript/CORS.md#同源策略)
-
 # GC
 # 动画优化
   - 重绘
