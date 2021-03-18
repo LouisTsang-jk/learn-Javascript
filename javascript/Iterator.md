@@ -12,5 +12,7 @@ Iterator
 3. 第二次调用指针对象的`next`方法，指针就指向数据结构的第二个成员。
 4. 不断调用指针对象的`next`方法，直到它指向数据结构的结束位置。
 > 每一次调用next方法，都会返回数据结构的当前成员信息。返回一个包含`value`和`done`两个属性的对象。`value`属性是当前成员的值，`done`属性是一个布尔值，表示遍历是否结束
+## 默认Iterator接口
+ES6 规定，默认的 Iterator 接口部署在数据结构的Symbol.iterator属性，或者说，一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”（iterable）。
 # 参考
 [阮一峰ES6-Iterator](https://es6.ruanyifeng.com/#docs/iterator)
