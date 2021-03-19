@@ -4,12 +4,12 @@
 
 ```
 function quickSort(arr){
-  if(arr.length <=1){
+  if(arr.length <= 1){
     return arr;
   }
   const pivot = arr.splice(arr.length >> 1,1)[0];
   let left = [],right = [];
-  arr.forEach((item)=>{
+  arr.forEach(item => {
     item > pivot ? right.push(item) : left.push(item);
   })
   return [...quickSort(left),pivot,...quickSort(right)];

@@ -20,6 +20,8 @@
 > ->可继续遍历(Array,Object,Map,Set)
 > ->可不继续遍历(String,Number,Boolean...)
 + `function`要通过prototype判断是否是箭头函数
+```
 
+```
 
 [克隆](https://segmentfault.com/a/1190000020255831)

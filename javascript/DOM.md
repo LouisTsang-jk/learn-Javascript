@@ -42,3 +42,8 @@ DOMString
 const xmlSerializer = new XMLSerializer();
 const string = xmlSerializer.serializeToString(rootNode);
 ```
+# DOM操作
+- 创建
+- 添加
+- 移除
+- 复制
