@@ -179,23 +179,49 @@ XSS
   ## promise**
   [Promise](javascript/Promise.md)
   ## instanceof
+  ```
+  function _instanceof(L, R) {
+    const O = R.prototype;
+    L = L.__proto__;
+    while (true) {
+      if (L === null) return false;
+      if (L === O) return true;
+      L = L.__proto__;
+    }
+  }
+  ```
   ## call
   ## apply
   ## bind
   ## new
   ```
   function _new (fn, ...args) {
-    if (typeof func !== 'function') {
-      throw 'first argument must be function';
-    }
-    const obj = {};
-    obj.__proto__ = Object.create(fn.prototype);
-    
+    const temp = {};
+    fn.apply(temp, args);
+    return temp;
   }
   ```
   ## EventEmitter
   [手写发布--订阅模式](https://github.com/tang-yue/interview/tree/master/coding#手写发布--订阅模式)
-
+    ```
+      class EventEmitter {
+        constructor () {
+          this.events = {}
+        }
+        on (eventName, cb) {
+          if (this.event[eventName]) {
+            this.events[eventName].push(cb)
+          } else {
+            this.events[eventName] = [cb]
+          }
+        }
+        emit (eventName, cb) {
+          if (this.events[eventName]) {
+            this.events[eventName].forEach(cb => cb())
+          }
+        }
+      }
+    ```
 # 应用
 - 虚拟列表
 - 优化打包速度
