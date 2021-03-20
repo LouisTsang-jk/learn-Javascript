@@ -183,6 +183,16 @@ XSS
   ## apply
   ## bind
   ## new
+  ```
+  function _new (fn, ...args) {
+    if (typeof func !== 'function') {
+      throw 'first argument must be function';
+    }
+    const obj = {};
+    obj.__proto__ = Object.create(fn.prototype);
+    
+  }
+  ```
   ## EventEmitter
   [手写发布--订阅模式](https://github.com/tang-yue/interview/tree/master/coding#手写发布--订阅模式)
 
