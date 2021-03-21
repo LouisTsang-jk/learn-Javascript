@@ -192,6 +192,15 @@ XSS
   ```
   ## call
   ## apply
+  ```
+  Function.prototype._apply = function (context = window, args) {
+    const fn = Symbol('fn');
+    context[fn] = this;
+    const result = context[fn](args);
+    delete context.fn;
+    return result;
+  }
+  ```
   ## bind
   ## new
   ```
