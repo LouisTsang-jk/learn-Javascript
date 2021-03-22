@@ -294,3 +294,20 @@ Array.prototype.fakeFilter = function (fn) {
 ```
 /(?<=\/\/).+(?=\.)/
 ```
+
+# 24. 输出
+```
+const btn = document.createElement('button');
+btn.innerHTML = 'CLICK ME!';
+document.body.appendChild(btn);
+btn.addEventListener('click', () => {
+    Promise.resolve().then(() => { console.log('M1') });
+    console.log('L1');
+})
+
+btn.addEventListener('click', () => {
+    Promise.resolve().then(() => { console.log('M2') });
+    console.log('L2');
+})
+btn.click();
+```
