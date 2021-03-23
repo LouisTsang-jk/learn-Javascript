@@ -311,3 +311,50 @@ btn.addEventListener('click', () => {
 })
 btn.click();
 ```
+
+# 25. 队列同时只处理两个任务
+```
+function queue(list) {
+  for (let i = 0; i < 2; i++) {
+    const fn = list.shift()
+    fn(finish);
+  }
+  function finish () {
+    if (list.length > 0) {
+      const fn = list.shift()
+      fn(finish);
+    }
+  }
+}
+
+function task1(next) {
+  setTimeout(function () {
+    console.log(1);
+    next();
+  }, 1000)
+}
+
+function task2(next) {
+  console.log(2)
+  next();
+}
+
+function task3(next) {
+  setTimeout(function () {
+    console.log(3);
+    next();
+  }, 200)
+}
+
+function task4(next) {
+  setTimeout(function () {
+    console.log(4);
+    next();
+  }, 300)
+}
+
+
+queue([task1, task2, task3, task4])
+
+// 2，3，1
+```
