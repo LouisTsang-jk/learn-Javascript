@@ -49,6 +49,9 @@ new Promise((resolve, reject) => {
 一个可迭代对象，如`Array`或`String`
 ## Promise.race()
 
+## Promise.allSettled()
+返回每个Promise结果。
+
 ## Promise.resolve()
 返回一个以给定值解析后的`Promise`对象。
 - 如果这个值是个`promise`，那么将返回这个`promise`;

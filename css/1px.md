@@ -1,5 +1,6 @@
 # 移动端1px渲染
 对于750的设计稿，iphone6实际宽度为375，即dpr为2，所以实际渲染`border: 1px;`的时候相当于渲染了`2px`的边框。
+`devicePixelRatio` = 物理像素 / 独立像素
 1. svg
 2. box-shadow
 ```

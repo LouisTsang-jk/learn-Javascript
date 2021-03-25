@@ -358,3 +358,20 @@ queue([task1, task2, task3, task4])
 
 // 2，3，1
 ```
+
+# 26. 
+```
+const btn = document.createElement('button');
+btn.innerHTML = 'CLICK ME!';
+document.body.appendChild(btn);
+btn.addEventListener('click', () => {
+    Promise.resolve().then(() => { console.log('M1') });
+    console.log('L1');
+})
+
+btn.addEventListener('click', () => {
+    Promise.resolve().then(() => { console.log('M2') });
+    console.log('L2');
+})
+btn.click();
+```
