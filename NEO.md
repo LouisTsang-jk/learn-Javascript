@@ -10,6 +10,7 @@
 # 浏览器渲染
 [浏览器渲染](standard/CRP.md)
 
+# TODO DNS
 # 页面渲染中执行的事件「TODO」
 1. 发出加载资源的请求
 2. document加载结束并解析,此时css等其他资源未加载完成
@@ -240,8 +241,9 @@ XSS
 # 文件上传
 [文件上传](https://juejin.cn/post/6844904106658643982)
 # http1.0/http1.1/http2/https
-
 [HTTP](https://github.com/tang-yue/interview/tree/master/network)
+# 防抖/节流
+
 
 # 部门负责人
 - 部门负责内容
