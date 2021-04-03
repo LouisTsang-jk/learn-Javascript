@@ -134,5 +134,18 @@ arr[0] == arr[1] // => true
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
+## 
+```
+function* Generator(arg) {
+    arg = yield arg + 10;
+    arg = yield arg;
+}
+
+let g = Generator(10);
+let v1 = g.next(10).value;
+let v2 = g.next(10).value;
+
+```
+
 # 参考
 [](https://juejin.im/post/5ef17819f265da02e47d939e)
