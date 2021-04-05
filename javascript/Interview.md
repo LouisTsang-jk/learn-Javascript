@@ -375,3 +375,15 @@ btn.addEventListener('click', () => {
 })
 btn.click();
 ```
+# 27.
+```
+function* Generator(arg) {
+  arg = yield arg + 10;
+  arg = yield arg;
+}
+
+let g = Generator(10);
+let v1 = g.next(10).value;
+let v2 = g.next(10).value;
+```
+求v1和v2
