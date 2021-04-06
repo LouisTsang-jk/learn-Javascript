@@ -177,6 +177,8 @@ XSS
 ## 二分查找(leetcode 704)
 # 手写代码
   [手写](https://github.com/tang-yue/interview/tree/master/coding)
+  ## flat
+  [Flat]()
   ## promise**
   [Promise](javascript/Promise.md)
   ## instanceof
