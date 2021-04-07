@@ -43,20 +43,21 @@ Function.prototype.zbind = function (context, ...firstarg) {
 
 ## flat
 ```
-// [1, 2, 3, [4, 5, 6, [7, 8]]]
-const arr = [1, 2, 3, [4, 5, 6, [7, 8]]]
+const arr = [1, 2, 3, [4, 5, 6, [7, [8]]]]
 Array.prototype._flat = function (depth) {
   return this.reduce((acc, cur) => {
+    if (depth === 0) {
+      return [...acc, cur]
+    }
     if (cur instanceof Array) {
-      console.log('A:', cur._flat())
-      return [...acc, ...cur._flat()]
+      return [...acc, ...cur._flat(--depth)]
     } else {
-      console.log('B:', [...acc, cur])
       return [...acc, cur]
     }
   }, [])
 }
-arr._flat()
+arr._flat(2)
 ```
+
 ## Promise
 <!-- TODO -->
