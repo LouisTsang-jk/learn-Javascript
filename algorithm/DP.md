@@ -67,6 +67,32 @@ console.timeEnd() // 0.157958984375 ms
 首先这题符合「最优子结构」，子问题之间相互独立。
 
 1. 确定「Base case」，目标金额`amount`为0的时候返回0
+
 2. 确定「状态」，原问题和子问题中会变化的变量
+
 3. 确定「选择」，导致「状态」产生变化的行为，在零钱问题里面就是选择了一枚硬币，选择了硬币就相当于减少了目标金额，所以所有硬币的面值，就是「选择」
-4. 明确`dp`函数/数组的定义
+
+4. 明确`dp`函数/数组的定义。
+
+   ```javascript
+   function coinChange (coins, amount) {
+     const memo = {}
+     const dp = function (n) {
+       if (memo[n]) return memo[n]
+       if (n === 0) return 0
+    if (n < 0) return -1
+       let result = Infinity
+       for(const coin of coins) {
+         const subproblem = dp(n - coin)
+         if (subproblem === -1) continue
+         result = Math.min(result, 1 + subproblem)
+       }
+       memo[n] = result !== Infinity ? result : -1
+       return memo[n]
+     }
+     return dp(amount)
+   }
+   
+   ```
+   
+   
