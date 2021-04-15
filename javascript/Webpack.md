@@ -1,4 +1,7 @@
 # webpack
+- 模块打包
+- 编译兼容(loader)
+- 能力扩展(plugin)
 ## Core
 [tapable](https://juejin.cn/post/6924597386572464142?utm_source=gold_browser_extension)
 ## loader
@@ -10,6 +13,17 @@
 + ...
 
 > 一般来说Loader是在打包前或打包时作用于单个文件。而Plugin一般在打包过程结束之后作用于包或者chunk级别。
+`webpack`基于发布-订阅模式，在运行的生命周期中会广播出许多事件，插件通过监听这些事件，就能在特定的阶段执行插件任务，从而实现功能。
+- complier
+暴露Webpack整个生命周期相关的钩子(compiler-hooks)
+- compilation
+暴露模块和依赖相关的粒度更小的事件钩子(compilation-hooks)
+## Event
+Webpack的事件机制基于`Tapable`事件流方案
+## sourceMap
+将编译、打包、压缩后的代码映射回源代码的技术，`sourceMap`可以帮助快速定位到源代码的位置，提高开发效率，并不是Webpack特有功能。映射文件后缀为`.map`。   
+压缩代码末端加上注释`//# sourceURL=//path/to/file.js.map`，即可让`sourceMap`生效。   
+浏览器会通过`sourceURL`去获取映射文件，通过解析器解析，实现源码和混淆代码之间的映射。
 
 ## API
 
@@ -82,3 +96,5 @@ devServer: {
 根据入口和模块之间的依赖关系，组装成一个个包含多个模块的`Chunk`，再把每个`Chunk`转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会
 - 输出完成
 在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统
+# 参考
+[当面试官问Webpack的时候他想知道什么](https://juejin.cn/post/6943468761575849992#heading-1)
