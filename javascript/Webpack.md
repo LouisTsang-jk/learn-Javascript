@@ -18,6 +18,10 @@
 暴露Webpack整个生命周期相关的钩子(compiler-hooks)
 - compilation
 暴露模块和依赖相关的粒度更小的事件钩子(compilation-hooks)
+### 开发
+- 插件是函数或者包含`apply`方法的对象，否则无法访问`compiler`实例
+- 传给每个插件的`compiler`和`compilation`对象都是同一个引用，若修改了属性，则影响后续插件
+- 异步事件需要在处理完后调用回调函数通知`webpack`进入下一个流程，否则阻塞
 ## Event
 Webpack的事件机制基于`Tapable`事件流方案
 ## sourceMap
