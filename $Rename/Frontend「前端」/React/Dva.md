@@ -68,6 +68,7 @@ export default IndexModel;
 ```
 Pages
 ```
+const dispatch = useDispatch();
 // 调用
 dispatch({
 type: 'index/save',
