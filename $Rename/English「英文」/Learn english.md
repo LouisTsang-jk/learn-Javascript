@@ -35,3 +35,7 @@ primitives
 Reconciler
 
 opposite
+
+regression
+
+intact
